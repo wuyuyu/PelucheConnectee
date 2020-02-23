@@ -2,6 +2,8 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import Menu from './Menu';
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -30,24 +32,50 @@ function App() {
   );
 }
 
-function Inscription(){
-  return(<form onSubmit={event => this.setName(event) }>
+
+function formatDate(date) {
+  return date.toLocaleDateString();
+}
+
+export function Connexion(){
+return(
+  <div>
+  <div className="divCo">
+  <div> Nom d'utilisateur: </div>
   <label>
-      Nom : <input type="text" />
+ <input type="text" />
   </label>
+  </div>
+  <div className="divC  O">
+  <div>   Mot de passe :  </div>
   <label>
-      Prénom : <input type="text" />
+<input type="text" />
   </label>
-  <label>
-      âge de votre enfant : <input type="number" />
-  </label>
-  <button>Valider</button>
-</form>
+  </div>
+  </div>
+
 );
 
 }
-function Forum(){
-  console.log("je suis dedans");
+
+// function Post(props){
+//   return(
+//     <div className="Post">
+//       <div className="UserInfo">
+//         {props.author.name}
+//       </div>
+//     </div>
+    
+//     {props.text} <div className="Post-text"></div>
+
+//     <div className="Post-date">
+//       {formatDate(props.date)}
+//     </div>
+  
+
+//   );
+// }
+export function Forum(){
   return (
     <div>
       je suis le forum
@@ -55,15 +83,15 @@ function Forum(){
   );
 }
 
-function Boutique(){
-  console.log("je suis dedans");
+export function Boutique(){
+
   return (
     <div>
       je suis la boutique
     </div>
   );
 }
-function Jeux(){
+export function Jeux(){
  
   return (
     <div>
@@ -71,7 +99,7 @@ function Jeux(){
     </div>
   );
 }
-function Quizz(){
+export function Quizz(){
  
   return (
     <div>
@@ -79,7 +107,7 @@ function Quizz(){
     </div>
   );
 }
-function Conseils(){
+export function Conseils(){
  
   return (
     <div>
@@ -87,7 +115,7 @@ function Conseils(){
     </div>
   );
 }
-function About(){
+export function About(){
  
   return (
     <div>
@@ -96,48 +124,11 @@ function About(){
   );
 }
 
-function Menu(props){
-  return (
-    <div>
-    <Router>
-    
-    
-    
-    <Link to="/forum"> <Bouton name ="Forum" /></Link>
-    <Link to="/inscription"> <Bouton name ="Inscription" /></Link>
-    <Link to="/boutique"> <Bouton name ="Boutique" /></Link>
-    <Link to="/jeux"> <Bouton name ="Jeux" /></Link>
 
-    <Link to="/quizz"> <Bouton name ="Quizz" /></Link>
-    <Link to="/conseils"> <Bouton name ="Conseils" /></Link>
-    <Link to="/about"> <Bouton name ="A propos" /></Link>
-
-    
-    
-    <Switch>
-    <Route exact path="/" />
-    <Route path="/forum" component={Forum} />
-    <Route path="/inscription" component={Inscription} />
-    <Route path="/boutique" component={Boutique} />
-    <Route path="/jeux" component={Jeux} />
-    <Route path="/quizz" component={Quizz} />
-    <Route path="/conseils" component={Conseils} />
-    <Route path="/about" component={About} />
-
-     
-    </Switch>
-    
-    
-    </Router>
-    
-    </div>
-    
-    );
-}
 function Bouton(props){
-  return (<button className="bouton">{props.name} 
+  return (<div className="bouton">{props.name} </div>
   
-  </button>
+  
   );
 }
 
