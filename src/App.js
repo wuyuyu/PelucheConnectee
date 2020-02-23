@@ -1,7 +1,6 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-
 import Menu from './Menu';
 
 import {
@@ -58,30 +57,6 @@ return(
 
 }
 
-// function Post(props){
-//   return(
-//     <div className="Post">
-//       <div className="UserInfo">
-//         {props.author.name}
-//       </div>
-//     </div>
-    
-//     {props.text} <div className="Post-text"></div>
-
-//     <div className="Post-date">
-//       {formatDate(props.date)}
-//     </div>
-  
-
-//   );
-// }
-export function Forum(){
-  return (
-    <div>
-      je suis le forum
-    </div>
-  );
-}
 
 export function Boutique(){
 
@@ -124,13 +99,6 @@ export function About(){
   );
 }
 
-
-function Bouton(props){
-  return (<div className="bouton">{props.name} </div>
-  
-  
-  );
-}
 
 {/* <Link to="/forum"><Bouton name ="Forum" onClick={props.maFonction}/></Link> */}
 

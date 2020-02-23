@@ -6,10 +6,10 @@ import {
     Link
   } from "react-router-dom";
   import Inscription from './Inscription';
+  import Forum from './Forum'
   
   import {
-      Connexion,
-      Forum,
+    Connexion,
     Boutique,
     Jeux,
     Quizz,

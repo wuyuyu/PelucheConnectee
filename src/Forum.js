@@ -1,7 +1,7 @@
-import React from "react";
+import React, { Component } from "react";
 import Bouton from './App';
-
-// export default class Forum extends React.Component{
+import Message from './Message';
+export default class Forum extends Component{
 
 // - un bouton 'Nouveau Topic'
 // - un bouton 'Répondre'
@@ -12,16 +12,18 @@ import Bouton from './App';
 // - une petite flèche sur laquelle on va cliquer pour accéder au dernier message de chaque forum.
 
 
-//     render(){
-//         return(
-//             <div>
-//             <h1 className="titre">Forum</h1>
-//             <Bouton name="nouveau sujet"/>
-//             <Bouton name="Répondre"/>
-//             <Bouton name="Editer"/>
-//             <Bouton name="Supprimer"/>
-//             </div>
+    render(){
+        return(
+            <div>
+                
+                <Message userName="Michel" text="jziofjozjfiozejfiozejoifz"/>
+                <Message userName="Bertrand" text="adazdazdazdzadazdazdada"/>
+                <Message userName="Gérard" text="s,fo,zeof,zeo,foze,fozfzo"/>
+               
+                
+               
+            </div>
 
-//         );
-//     }
-// }
+        );
+    }
+}
