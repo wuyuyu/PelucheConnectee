@@ -14,7 +14,9 @@ constructor(props){
   }
 
   
-   const usersRef = firebase.database().ref('users');
+  const rootRef = firebase.database().ref();
+    this.usersRef = rootRef.child("utilisateurs");
+
 
 }
 
@@ -27,14 +29,11 @@ handleChange = (event) => {
 
  submitForm =(e) =>{
     e.preventDefault();
-    
+     this.saveUser(this.state.nom, this.state.prenom, this.state.adresse, this.state.motDePasse);
+     this.setState({nom:'', prenom:'', adresse:'',motDePasse:''});
 
-    // var nom = this.getInputVal('name');
-    // var prenom = getInputVal('firstName');
-    // var adresse = getInputVal('adresse');
-    // var motDePasse = getInputVal('mdp');
+  
 
-    console.log(this.state.nom);
 }
 
  getInputVal(id){
@@ -48,9 +47,6 @@ handleChange = (event) => {
        prenom: prenom,
        adresse: adresse,
        motDePasse: motDePasse
-
-
-
    });
 
 }
