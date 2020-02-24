@@ -40,24 +40,39 @@ export function Connexion(){
 return(
   <div>
   <div className="divCo">
-  <div> Nom d'utilisateur: </div>
+  <div id="email" value="test@mail.fr"> Email: </div>
   <label>
  <input type="text" />
   </label>
   </div>
   <div className="divC  O">
-  <div>   Mot de passe :  </div>
+  <div id="password" value="testMDP">Mot de passe:</div>
   <label>
 <input type="text" />
   </label>
+  <div>
+  <button onClick={Login}>Se connecter</button>
+  </div>
+  <div>
+  <Link to="/inscription">Pas encore inscrit?</Link>
+  </div>
   </div>
   </div>
 
 );
 
 }
+//firebase.auth().onAuthStateChanged(function(user) {
+  
+//});
 
 
+export function Login(){
+  console.log("chamois d'or")
+
+  var userMail = document.getElementById("email").value;
+  var password = document.getElementById("password").value;
+}
 export function Boutique(){
 
   return (
