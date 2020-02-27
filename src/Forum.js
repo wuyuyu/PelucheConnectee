@@ -1,6 +1,18 @@
 import React, { Component } from "react";
-import Bouton from './App';
-import Message from './Message';
+import config from "./firebaseconfig.js";
+
+import {
+BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+} from "react-router-dom";
+import Message from "./Message";
+import BoutonLike from "./BoutonLike";
+import NewTopic from "./NewTopic";
+import RepondreMessage from "./RepondreMessage";
+
+
 export default class Forum extends Component{
 
 // - un bouton 'Nouveau Topic'
@@ -14,18 +26,29 @@ export default class Forum extends Component{
     render(){
         return(
             <div>
-                    <h1>Coronavirus dans les bibimbaps</h1>
-                <Message userName="Michel" text="jziofjozjfiozejfiozejoifz"/>
-                <Message userName="Bertrand" text="adazdazdazdzadazdazdada"/>
-                <Message userName="Gérard" text="s,fo,zeof,zeo,foze,fozfzo"/>
-                <Message userName="Michel" text="jziofjozjfiozejfiozejoifz"/>
-                <Message userName="Bertrand" text="adazdazdazdzadazdazdada"/>
-                <Message userName="Gérard" text="s,fo,zeof,zeo,foze,fozfzo"/>
-               
+            <Router>
+                <h4>Choisir votre Topic:  </h4>
+                <select name="sujet">
+                <option> Bucharest </option>
+                <option>Coronavirus par tout ne sort pas de chez toi</option>
+                <option> Madrid </option>
+                </select>                
                 
-               
-            </div>
+                < Message userName="dddd" text="eerger"/>
+                < Message userName="dddd" text="eerger"/>
+                < Message userName="dddd" text="eerger"/>
+                < BoutonLike/>
 
+                <Link to="/RepondreMessage">RepondreMessage</Link>
+                <Link to="/NewTopic">NewTopic</Link>
+
+                <Switch>
+                <Route exact path="/" />
+                <Route path="/RepondreMessage" component={RepondreMessage} />
+                <Route path="/NewTopic" component={NewTopic} />
+                </Switch>
+            </Router>
+            </div>
         );
     }
 }

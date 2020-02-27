@@ -1,11 +1,10 @@
 // File : src/index.js [EXTRAIT]
 
 //...
-import app from "firebase/app";
 //...
 // On retrouve notre variable config ;)
 // Remplacez par la votre si vous voulez
- /*export default const config = {
+ export const config = {
     apiKey: "AIzaSyDBkqvQrhTQtzLBd8R_deQ45gveZW7tPDw",
     authDomain: "peluche-e5396.firebaseapp.com",
     databaseURL: "https://peluche-e5396.firebaseio.com",
@@ -15,4 +14,4 @@ import app from "firebase/app";
     appId: "1:932805687109:web:139bcc2bf79e8e69e2302c",
     measurementId: "G-HVKF022S87"
   };
-  */
+ 

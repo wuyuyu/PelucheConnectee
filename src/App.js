@@ -2,6 +2,10 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Menu from './Menu';
+import Inscription from "./Inscription"
+import Connexion from "./Connexion"
+import Firebase, { FirebaseContext } from './components/Firebase';
+
 
 import {
   BrowserRouter as Router,
@@ -15,28 +19,24 @@ import {
 
 function App() {
   return (
-
-
-    <div className="App">
-      <span>
-      <h1 className="titre">Peluche c</h1>  
-      <img className="panda" src={ require('./img/panda.svg') } />
-      <h1 className="titre">nnectée</h1> 
-      </span>
-      <Menu maFonction="" />
-      
+    <div>
+        <div className="App">
+          <span>
+            <h1 className="titre">Peluche c</h1>
+            <img className="panda" src={require('./img/panda.svg')} />
+            <h1 className="titre">nnectée</h1>
+          </span>
+          <Menu maFonction="" />
+        </div>
      </div> 
-   
-      
   );
 }
-
 
 function formatDate(date) {
   return date.toLocaleDateString();
 }
 
-export function Connexion(){
+/*export function Connexion(){
 return(
   <div>
   <div className="divCo">
@@ -65,21 +65,13 @@ return(
 //firebase.auth().onAuthStateChanged(function(user) {
   
 //});
-
+*/
 
 export function Login(){
   console.log("chamois d'or")
 
   var userMail = document.getElementById("email").value;
   var password = document.getElementById("password").value;
-}
-export function Boutique(){
-
-  return (
-    <div>
-      je suis la boutique
-    </div>
-  );
 }
 export function Jeux(){
  
@@ -111,6 +103,12 @@ export function About(){
     <div>
      Romain, Antoine, Tania et Yuyuan.
     </div>
+  );
+}
+
+export function RepondreMessage(){
+  return(
+  <div>ddddddd</div>
   );
 }
 

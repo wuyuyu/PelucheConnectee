@@ -1,8 +1,7 @@
-
 import React, { Component } from "react";
-//import * as firebase from "firebase";
+import * as firebase from "firebase";
 import Firebase, { FirebaseContext } from './components/Firebase';
-import ConnexionPage from './Connexion';
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -10,19 +9,19 @@ import {
   Link
 } from "react-router-dom";
 
-export default class InscriptionPage extends Component {
+export default class ConnexionPage extends Component {
     render() {
         return (
             <div>
                 <FirebaseContext.Consumer>
-                    {value => <Inscription value={value} />}
+                    {value => <Connexion value={value} />}
                 </FirebaseContext.Consumer>
             </div>
         );
     }
 }
 
-class Inscription extends Component {
+class Connexion extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -36,20 +35,23 @@ class Inscription extends Component {
         this.setState({ [event.target.name]: event.target.value });
     }
 
+    handleDeco = (event) =>{
+        this.state.fb.doSignOut();
+        alert("vous êtes bien déconnecté");
+    }
+
+
     handleClick = (event) => {
         const { email, password} = this.state;
         this.state.fb
-          .doCreateUserWithEmailAndPassword(email, password)
-          .then(authUser => {
-            this.setState({ email:this.state.email, password:this.state.password});
-            alert('Inscription terminée!');
-          })
-          .catch(error => {
+        .doSignInWithEmailAndPassword (email, password)
+        .catch(error => {
+           
             this.setState({ error });
           });
+         console.log("connectée");
         event.preventDefault();
-    
-      };
+    };
 
     render() {
         return (
@@ -63,18 +65,18 @@ class Inscription extends Component {
                 <div className="divCO">
                     <div id="password" value="testMDP">Mot de passe:</div>
                     <label>
-                        <input type="password" name="password" value={this.state.password} onChange={this.handleChange}/>
+                        <input type="text" name="password" value={this.state.password} onChange={this.handleChange}/>
                     </label>
                     <div>
                     </div>
-                    <button type="submit" onClick={this.handleClick}>Valider</button>
+                    <button type="submit" onClick={this.handleClick}>Connexion</button>
                     <div>
-                        <Link to="/connexion">Déjà inscrit?</Link>
+                        <Link to="/inscription">Pas encore inscrit?</Link>
                     </div>
+                    <div><button type="submit" onClick={this.handleDeco}>Deconnexion</button></div>
                 </div>
             </div>
         );
     }
 }
 
-//export default Connexion;
