@@ -35,16 +35,21 @@ class Connexion extends Component {
         this.setState({ [event.target.name]: event.target.value });
     }
 
+    handleDeco = (event) =>{
+        this.state.fb.doSignOut();
+        alert("vous êtes bien déconnecté");
+    }
+
 
     handleClick = (event) => {
         const { email, password} = this.state;
         this.state.fb
-          .doSignInWithEmailAndPassword (email, password).catch(error => {
+        .doSignInWithEmailAndPassword (email, password)
+        .catch(error => {
            
             this.setState({ error });
           });
-          let userId =  firebase.auth().currentUser;
-          console.log("l'id est" + userId.uid)
+         console.log("connectée");
         event.preventDefault();
     };
 
@@ -68,6 +73,7 @@ class Connexion extends Component {
                     <div>
                         <Link to="/inscription">Pas encore inscrit?</Link>
                     </div>
+                    <div><button type="submit" onClick={this.handleDeco}>Deconnexion</button></div>
                 </div>
             </div>
         );

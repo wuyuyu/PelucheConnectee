@@ -18,6 +18,7 @@ constructor(props){
     this.usersRef = rootRef.child("utilisateurs");
 }
 
+
 handleChange = (event) => {
   this.setState({[event.target.name]: event.target.value});
 }
@@ -27,9 +28,38 @@ handleChange = (event) => {
      this.saveUser(this.state.nom, this.state.prenom, this.state.adresse, this.state.motDePasse);
      this.setState({nom:'', prenom:'', adresse:'',motDePasse:''});
      console.log("here i am");
-}
+     let userId =  firebase.auth().currentUser;
+      var ref = firebase.database().ref('utilisateurs/' + userId.uid).child("prenom");
+      ref.on("value", function(snapshot) {
+      console.log(snapshot.val());
+     } );
+    
+ }
 
- getInputVal(id){
+ 
+
+// getUserData = () => {
+//   let ref = firebase.database().ref('utilisateurs/');
+//   ref.on('value', snapshot => {
+//     const state = snapshot.val();
+//     this.setState(state);
+//     console.log("c'est quoi ça?" + state);
+//   });
+//   console.log('DATA RETRIEVED');
+// }
+// getUserData = (id) => {
+//   var ref = firebase.database().ref('utilisateurs/').child(id);
+//   console.log(id);
+//   var name = ref.child('nom');
+//   var pn = name.on('value', function (snapshot) {
+
+//     console.log(name)
+//   });
+//   console.log('showMe' + pn);
+// }
+
+
+getInputVal(id){
     return document.getElementById(id).value;
 }
 
@@ -45,7 +75,13 @@ handleChange = (event) => {
 }
 
   render() {
-    return (<form id="contactForm" >
+    
+    let userId =firebase.auth().currentUser!= null?true:false;
+    return (
+      <div>
+     {userId == true &&
+    
+    <form id="contactForm" >
       <div className="divForm">
         <div>
           Nom :
@@ -85,9 +121,18 @@ handleChange = (event) => {
         <label>
           <input type="text" />
         </label>
+
       </div>
       <button type="submit" onClick={this.submitForm} >Valider</button>
-    </form>
+    </form> 
+     }
+     {userId == false &&
+
+      <h1>Merci de vous connecter!</h1>
+     }
+
+
+     </div>
     );
 
   }
