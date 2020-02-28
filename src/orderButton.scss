@@ -258,31 +258,13 @@ html {
 
 // Center & dribbble 
 body {
+    /*min-height: 100%;*/
+    margin: 0;
+    padding: 0;
     min-height: 100vh;
     display: flex;
     font-family: 'Inter UI', 'Inter', Arial;
     justify-content: center;
     align-items: center;
-    background: #ECEFFC;
-    .dribbble {
-        position: fixed;
-        display: block;
-        right: 20px;
-        bottom: 20px;
-        img {
-            display: block;
-            height: 28px;
-        }
-    }
-    .twitter {
-        position: fixed;
-        display: block;
-        right: 64px;
-        bottom: 14px;
-        svg {
-            width: 32px;
-            height: 32px;
-            fill: #1da1f2;
-        }
-    }
+    position: relative;
 }
