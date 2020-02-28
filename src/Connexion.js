@@ -48,6 +48,9 @@ class Connexion extends Component {
         .catch(error => {
            
             this.setState({ error });
+            console.log(error.message);
+
+            return;
           });
          console.log("connectée");
         event.preventDefault();

@@ -46,6 +46,7 @@ class Inscription extends Component {
           })
           .catch(error => {
             this.setState({ error });
+            console.log(error.message);
           });
         event.preventDefault();
     

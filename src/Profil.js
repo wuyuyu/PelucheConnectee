@@ -6,12 +6,49 @@ import config from "./firebaseconfig.js";
 export default class Profil extends Component{
 constructor(props){
   super(props);
-  this.state ={
-    nom :'',
-    prenom:'',
-    adresse:'',
-    motDePasse:''
+  let userId =  firebase.auth().currentUser;
+  if (userId == null){
+    return;
   }
+  var name;
+  var ref = firebase.database().ref('utilisateurs/' + userId.uid).child("nom");
+  ref.on("value", function(snapshot) {
+    
+  name =snapshot.val();
+ 
+  });
+  var nickname;
+  var ref = firebase.database().ref('utilisateurs/' + userId.uid).child("prenom");
+  ref.on("value", function(snapshot) {
+    
+  nickname =snapshot.val();
+ 
+  });
+  var ageEnfant;
+  var ref = firebase.database().ref('utilisateurs/' + userId.uid).child("ageEnfant");
+  ref.on("value", function(snapshot) {
+    
+  ageEnfant =snapshot.val();
+ 
+  });
+
+
+  this.state ={
+    nom :name,
+    prenom:nickname,
+    ageEnfant:ageEnfant,
+    id:''
+  }
+ 
+ 
+  
+
+  // var ref = firebase.database().ref('utilisateurs/' + userId.uid).child("prenom");
+  // ref.on("value", function(snapshot) {
+  //   console.log(snapshot.val());
+  // this.setState({nom:snapshot.val()});
+
+
 
   
   const rootRef = firebase.database().ref();
@@ -23,30 +60,55 @@ handleChange = (event) => {
   this.setState({[event.target.name]: event.target.value});
 }
 
+componentDidMount =() =>{
+
+  // let userId =  firebase.auth().currentUser;
+
+  // if (userId == null){
+  //   return;
+  // }
+  // var ref = firebase.database().ref('utilisateurs/' + userId.uid).child("nom");
+  // ref.on("value", function(snapshot) {
+  //   console.log(snapshot.val());
+  // this.setState({nom:snapshot.val()});
+
+// });
+}
+
  submitForm =(e) =>{
     e.preventDefault();
-     this.saveUser(this.state.nom, this.state.prenom, this.state.adresse, this.state.motDePasse);
-     this.setState({nom:'', prenom:'', adresse:'',motDePasse:''});
-     console.log("here i am");
-     let userId =  firebase.auth().currentUser;
-      var ref = firebase.database().ref('utilisateurs/' + userId.uid).child("prenom");
+    let userId =  firebase.auth().currentUser;
+  
+    console.log("here i am" + userId.uid);
+     this.saveUser(this.state.nom, this.state.prenom,this.state.ageEnfant,userId.uid);
+     //this.setState({nom:'', prenom:'', adresse:'',motDePasse:''});
+    
+     
+     console.log(userId.uid)
+      var ref = firebase.database().ref('utilisateurs/' + userId.uid).child("nom");
       ref.on("value", function(snapshot) {
       console.log(snapshot.val());
      } );
+    // this.getUserData();
     
  }
 
  
 
-// getUserData = () => {
-//   let ref = firebase.database().ref('utilisateurs/');
-//   ref.on('value', snapshot => {
-//     const state = snapshot.val();
-//     this.setState(state);
-//     console.log("c'est quoi ça?" + state);
-//   });
-//   console.log('DATA RETRIEVED');
-// }
+getUserData = () => {
+  var name;
+  let userId =  firebase.auth().currentUser;
+  if (userId == null){
+    return;
+  }
+  var ref = firebase.database().ref('utilisateurs/' + userId.uid).child("nom");
+  ref.on('value', snapshot => {
+     name = snapshot.val()
+    console.log("c'est quoi ça?" + name);
+    
+  });
+  return name;
+}
 // getUserData = (id) => {
 //   var ref = firebase.database().ref('utilisateurs/').child(id);
 //   console.log(id);
@@ -62,21 +124,32 @@ handleChange = (event) => {
 getInputVal(id){
     return document.getElementById(id).value;
 }
+saveUser(nom, prenom, ageEnfant, userId) {
+  console.log("l'id est" + userId)
+  firebase.database().ref('utilisateurs/' + userId).set({
+    nom: nom,
+    prenom: prenom,
+    ageEnfant : ageEnfant,
+    id: userId
+  });
+}
+ saveUserOld(nom,prenom,ageEnfant,userId){
 
- saveUser(nom,prenom,adresse,motDePasse){
    var  newUserRef = this.usersRef.push();
    newUserRef.set({
        nom: nom,
        prenom: prenom,
-       adresse: adresse,
-       motDePasse: motDePasse
+       ageEnfant: ageEnfant,
+       //id:userId 
+     
    });
 
 }
 
   render() {
-    
-    let userId =firebase.auth().currentUser!= null?true:false;
+   
+     let userId =firebase.auth().currentUser!= null?true:false;
+    // console.log("le nom est " + this.state.prenom);
     return (
       <div>
      {userId == true &&
@@ -101,27 +174,10 @@ getInputVal(id){
       <div className="divForm">
         <div>Age de votre enfant : </div>
         <label>
-          <input type="number" />
+          <input type="number" name="ageEnfant" value={this.state.ageEnfant} onChange={this.handleChange}  />
         </label>
       </div>
       <div className="divForm">
-        <div>Email</div>
-        <label>
-          <input type="text" name="adresse" value={this.state.adresse} onChange={this.handleChange} />
-        </label>
-      </div>
-      <div className="divForm">
-        <div>Mot de passe:  </div>
-        <label>
-          <input type="text" name="motDePasse" value={this.state.motDePasse} onChange={this.handleChange} />
-        </label>
-      </div>
-      <div className="divForm">
-        <div>Confirmez votre mot de passe:</div>
-        <label>
-          <input type="text" />
-        </label>
-
       </div>
       <button type="submit" onClick={this.submitForm} >Valider</button>
     </form> 
