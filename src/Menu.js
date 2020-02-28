@@ -29,21 +29,21 @@ export default class Menu extends Component{
         <FirebaseContext.Provider value={new Firebase()}>
           <Router>
           <div className="lien">
-              <Link to="/accueil"> Accueil</Link>
+              <Link to="/accueil" className="menu"> Accueil</Link>
 
-              <Link to="/connexion">Connexion</Link>
+              <Link to="/connexion" className="menu">Connexion</Link>
 
-              <Link to="/profil">Mon compte</Link>
+              <Link to="/profil" className="menu">Mon compte</Link>
 
-              <Link to="/boutique">Boutique</Link>
+              <Link to="/boutique" className="menu">Boutique</Link>
 
-              <Link to="/forum"> Forum</Link>
+              <Link to="/forum" className="menu"> Forum</Link>
 
-              <Link to="/conseils">Conseils</Link>
+              <Link to="/conseils" className="menu">Conseils</Link>
 
-              <Link to="/contact"> Contact</Link>
+              <Link to="/contact" className="menu"> Contact</Link>
 
-              <Link to="/about"> A propos</Link>
+              <Link to="/about" className="menu"> A propos</Link>
             </div>
 
             <Switch>

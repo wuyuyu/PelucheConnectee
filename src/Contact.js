@@ -12,54 +12,48 @@ export default function Contact(){
         <br/>
         <form>
           <label>Combien seriez-vous prêts à payer pour cette peluche?</label>
+          <br/>
           <div className="radio">
-          <label>
-            <input type="radio" value="option1" />
-            Entre 30 et 50€
-          </label>
-          </div>
-          <div className="radio">
-            <label>
-              <input type="radio" value="option2" />
-              Entre 50 et 70€
-            </label>
-          </div>
-          <div className="radio">
-            <label>
-              <input type="radio" value="option3" />
-              Entre 70 et 90€
-            </label>
+            <input type="radio" name='prix' value="option1" />
+            <label>Entre 30 et 50€</label>
+            <br/>          
+            <input type="radio" name='prix' value="option2" />
+            <label>Entre 50 et 70€</label>
+            <br/>
+            <input type="radio" name='prix' value="option3" />
+            <label>Entre 70 et 90€</label>
           </div>
           <br/>
           <label>Quelle fonctionalité pensez-vous nécessaire?</label>
+          <br/>
           <div className="checkBox">
             <label>
               <input type="checkbox" />
-               Babyphone
+                Babyphone
             </label>
           </div>
           <div className="checkBox">
             <label>
               <input type="checkbox" />
-               Veilleuse
+                Veilleuse
             </label>
           </div>
           <div className="checkBox">
             <label>
               <input type="checkbox" />
-               Videophone
+                Videophone
             </label>
           </div>
           <div className="checkBox">
             <label>
               <input type="checkbox" />
-               Thermomètre
+                Thermomètre
             </label>
           </div>
           <div className="checkBox">
             <label>
               <input type="checkbox" />
-               Dictaphone
+                Dictaphone
             </label>
           </div>
         </form>

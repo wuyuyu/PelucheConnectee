@@ -38,6 +38,11 @@ input[type='submit'] {
     cursor: pointer;
 }
 
+input[type='radio'],
+input[type='checkbox'] {
+    margin-right: 10px;
+}
+
 .contactInput {
     border-radius: 5px;
     font-family: 'Indie Flower';
