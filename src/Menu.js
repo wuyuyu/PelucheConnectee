@@ -10,15 +10,10 @@ import {
   import ConnexionPage from './Connexion';
   import Forum from './Forum';
   import Boutique from './Boutique';
-  import Accueil from './Accueil';
+  import About from './About';
   import Profil from './Profil';
   import Contact from './Contact';
-  
-  import {
-    Conseils,
-    About
-
-  } from './App';
+  import Conseils from './Conseils';
 
 export default class Menu extends Component{
   constructor(props) {
@@ -33,39 +28,35 @@ export default class Menu extends Component{
       <div>
         <FirebaseContext.Provider value={new Firebase()}>
           <Router>
-            <div className="lien">
-              <Link to="/accueil"> Accueil</Link>
-            </div>
-            <div className="lien">
-              <Link to="/connexion">Connexion/Inscription</Link>
-            </div>
-            <div className="lien">
-              <Link to="/profil">Mon compte</Link>
-            </div>
-            <div className="lien">
-              <Link to="/boutique">Boutique</Link>
-            </div>
-            <div className="lien">
-              <Link to="/forum"> Forum</Link>
-            </div>
-            <div className="lien">
-              <Link to="/conseils">Conseils</Link>
-            </div>
-            <div className="lien">
-              <Link to="/contact"> Nous contacter</Link>
+          <div className="lien">
+              <Link to="/accueil" className="menu"> Accueil</Link>
+
+              <Link to="/connexion" className="menu">Connexion</Link>
+
+              <Link to="/profil" className="menu">Mon compte</Link>
+
+              <Link to="/boutique" className="menu">Boutique</Link>
+
+              <Link to="/forum" className="menu"> Forum</Link>
+
+              <Link to="/conseils" className="menu">Conseils</Link>
+
+              <Link to="/contact" className="menu"> Contact</Link>
+
+              <Link to="/about" className="menu"> A propos</Link>
             </div>
 
             <Switch>
               <Route exact path="/" />
-              <Route path="/accueil" component={Accueil} />
+              {/*<Route path="/accueil" component={Accueil} />*/}
               <Route path="/connexion" component={ConnexionPage} />
               <Route path="/inscription" component={InscriptionPage} />
-              
               <Route path="/forum" component={Forum} />
               <Route path="/profil" component={Profil} />
               <Route path="/boutique" component={Boutique} />
               <Route path="/conseils" component={Conseils} />
               <Route path="/contact" component={Contact} />
+              <Route path="/about" component={About} />
             </Switch>
           </Router>
       </FirebaseContext.Provider>
