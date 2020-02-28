@@ -120,7 +120,7 @@ export default class Boutique extends Component {
             <div>
                 <h3>Vic' la Peluche</h3>
                 <div className="rolling" >
-                    {/* <img src="./img/peluche.jpeg" id="movieSlider" alt="Movie Slider"/> */}
+                    <img src="./img/peluche.jpeg" id="movieSlider" alt="Movie Slider"/>
                 </div>
                 <p>Inscrivez-vous sur la liste d'attente</p>
                 <button className="truck-button" onClick={this.handleChange}>

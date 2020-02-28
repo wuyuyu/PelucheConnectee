@@ -13,12 +13,7 @@ import {
   import Accueil from './Accueil';
   import Profil from './Profil';
   import Contact from './Contact';
-  
-  import {
-    Conseils,
-    About
-
-  } from './App';
+  import Conseils from './Conseils';
 
 export default class Menu extends Component{
   constructor(props) {

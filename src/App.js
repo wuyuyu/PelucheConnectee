@@ -67,44 +67,6 @@ return(
 //});
 */
 
-export function Login(){
-  console.log("chamois d'or")
-
-  var userMail = document.getElementById("email").value;
-  var password = document.getElementById("password").value;
-}
-export function Jeux(){
- 
-  return (
-    <div>
-       jeux éducatifs pour les mômes
-    </div>
-  );
-}
-export function Quizz(){
- 
-  return (
-    <div>
-      je suis le quizz
-    </div>
-  );
-}
-export function Conseils(){
- 
-  return (
-    <div>
-      je suis composé d'articles pour les parents
-    </div>
-  );
-}
-export function About(){
- 
-  return (
-    <div>
-     Romain, Antoine, Tania et Yuyuan.
-    </div>
-  );
-}
 
 export function RepondreMessage(){
   return(

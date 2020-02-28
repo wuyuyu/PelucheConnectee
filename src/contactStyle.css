@@ -1,0 +1,63 @@
+@import url(https://fonts.googleapis.com/css?family=Indie+Flower);
+@import url(https://fonts.googleapis.com/css?family=Exo:400,700,800);
+@import url(https://fonts.googleapis.com/css?family=Gloria+Hallelujah);
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.contactLabel {
+    font-size: 23px;
+    display: block;
+    margin: 3px 0;
+    font-weight: bold;
+}
+
+#container {
+    font-family: 'Gloria Hallelujah';
+    max-width: 500px;
+    background-color: rgb(156, 202, 245);
+    padding: 5px 30px 9px 30px;
+    margin: 3px auto;
+    border: 3px black solid;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-form {
+    text-decoration: underline;
+    text-align: center;
+    font-weight: 800;
+    font-size: 40px;
+}
+
+input[type='submit'] {
+    cursor: pointer;
+}
+
+.contactInput {
+    border-radius: 5px;
+    font-family: 'Indie Flower';
+    /*padding: 5px 5px;*/
+}
+
+#msg {
+    border-radius: 5px;
+    font-family: 'Indie Flower';
+}
+
+.centre {
+    align-content: center;
+}
+
+#container input,
+textarea {
+    margin: 0;
+}
+
+#contactInput {
+    display: block;
+}
