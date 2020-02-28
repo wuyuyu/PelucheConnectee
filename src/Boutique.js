@@ -11,6 +11,27 @@ import {
     Link
 } from "react-router-dom";
 export default class Boutique extends Component {
+    constructor(props){
+        super(props);
+
+        this.state = {
+           prenom: ''
+        };
+    let userId =  firebase.auth().currentUser;
+    if (userId == null){
+      return;
+    }
+    var name;
+    var ref = firebase.database().ref('utilisateurs/' + userId.uid).child("prenom");
+    ref.on("value", (snapshot) => {
+      
+        name =snapshot.val();
+        console.log(" le nom est" + name)
+        this.setState({...this.state, prenom:name});
+   
+    });
+}
+
    /* constructor(props){
         super(props);
         window.onload = this.rotate();
@@ -116,17 +137,18 @@ export default class Boutique extends Component {
         setTimeout(this.rotate, 1 * 1000)
     }*/
     render(){
+        const {prenom} = this.state;
         return(
             <div>
-                <h3>Vic' la Peluche</h3>
+                <h3>Vic la Peluche</h3>
                 <div className="rolling" >
                     <img src="./img/peluche.jpeg" id="movieSlider" alt="Movie Slider"/>
                 </div>
-                <p>Inscrivez-vous sur la liste d'attente</p>
+                <p>{prenom} Inscrivez-vous sur la liste d'attente</p> 
                 <button className="truck-button" onClick={this.handleChange}>
                     <span className="default">Réserver</span>
                     <span className="success">
-                        Votre peluche est réservée!
+                        Peluche réservée!
                         <svg viewBox="0 0 12 10">
                             <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
                         </svg>
