@@ -19,9 +19,11 @@ export default class RepondreMessage extends Component{
     }
 
     submitNewMessage =(e)=>{
-       	e.preventDefault();
+      alert("Votre message est ajouté avec succèe. ");
+      e.preventDefault();
 	    this.saveNewMessage(this.state.message);
 	    this.setState({message:''});
+      this.props.send();
     }
 
     saveNewMessage(message){

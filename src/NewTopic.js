@@ -15,13 +15,15 @@ export default class NewTopic extends Component{
     }
 
     handleChange = (e) => {
-    this.setState({[e.target.name]: e.target.value});
+      this.setState({[e.target.name]: e.target.value});
     }
 
     submitNewTopic =(e)=>{
-       	e.preventDefault();
+      alert("Votre Topic est crée avec succèe. ");
+      e.preventDefault();
 	    this.saveTopic(this.state.topic);
 	    this.setState({topic:''});
+      this.props.send();
     }
 
      saveTopic(topic){
