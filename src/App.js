@@ -49,8 +49,7 @@ class Footer extends React.Component {
   render() {
     return (
       <div id='footer'>
-        <br/>
-        Romain, Antoine, Tania et Yuyuan.
+        <p>Romain, Antoine, Tania et Yuyuan.</p>
      </div>
      );
   }
