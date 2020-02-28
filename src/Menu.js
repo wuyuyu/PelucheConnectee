@@ -10,7 +10,7 @@ import {
   import ConnexionPage from './Connexion';
   import Forum from './Forum';
   import Boutique from './Boutique';
-  import Accueil from './Accueil';
+  //import Accueil from './Accueil';
   import Profil from './Profil';
   import Contact from './Contact';
   
@@ -57,7 +57,7 @@ export default class Menu extends Component{
 
             <Switch>
               <Route exact path="/" />
-              <Route path="/accueil" component={Accueil} />
+              {/*<Route path="/accueil" component={Accueil} />*/}
               <Route path="/connexion" component={ConnexionPage} />
               <Route path="/inscription" component={InscriptionPage} />
               

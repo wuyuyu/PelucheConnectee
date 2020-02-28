@@ -41,16 +41,8 @@ constructor(props){
   }
  
  
-  
-
-  // var ref = firebase.database().ref('utilisateurs/' + userId.uid).child("prenom");
-  // ref.on("value", function(snapshot) {
-  //   console.log(snapshot.val());
-  // this.setState({nom:snapshot.val()});
 
 
-
-  
   const rootRef = firebase.database().ref();
     this.usersRef = rootRef.child("utilisateurs");
 }
@@ -60,20 +52,6 @@ handleChange = (event) => {
   this.setState({[event.target.name]: event.target.value});
 }
 
-componentDidMount =() =>{
-
-  // let userId =  firebase.auth().currentUser;
-
-  // if (userId == null){
-  //   return;
-  // }
-  // var ref = firebase.database().ref('utilisateurs/' + userId.uid).child("nom");
-  // ref.on("value", function(snapshot) {
-  //   console.log(snapshot.val());
-  // this.setState({nom:snapshot.val()});
-
-// });
-}
 
  submitForm =(e) =>{
     e.preventDefault();
@@ -109,16 +87,6 @@ getUserData = () => {
   });
   return name;
 }
-// getUserData = (id) => {
-//   var ref = firebase.database().ref('utilisateurs/').child(id);
-//   console.log(id);
-//   var name = ref.child('nom');
-//   var pn = name.on('value', function (snapshot) {
-
-//     console.log(name)
-//   });
-//   console.log('showMe' + pn);
-// }
 
 
 getInputVal(id){
@@ -133,18 +101,18 @@ saveUser(nom, prenom, ageEnfant, userId) {
     id: userId
   });
 }
- saveUserOld(nom,prenom,ageEnfant,userId){
+//  saveUserOld(nom,prenom,ageEnfant,userId){
 
-   var  newUserRef = this.usersRef.push();
-   newUserRef.set({
-       nom: nom,
-       prenom: prenom,
-       ageEnfant: ageEnfant,
-       //id:userId 
+//    var  newUserRef = this.usersRef.push();
+//    newUserRef.set({
+//        nom: nom,
+//        prenom: prenom,
+//        ageEnfant: ageEnfant,
+//        //id:userId 
      
-   });
+//    });
 
-}
+// }
 
   render() {
    
@@ -165,7 +133,7 @@ saveUser(nom, prenom, ageEnfant, userId) {
       </div>
       <div className="divForm">
         <div>
-          Prénom :
+          Prénom :  {this.state.prenom}
     </div>
         <label>
           <input type="text" name="prenom" value={this.state.prenom} onChange={this.handleChange} />
