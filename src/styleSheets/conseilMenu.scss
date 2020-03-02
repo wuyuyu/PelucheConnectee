@@ -81,23 +81,23 @@ body {
         transition: transform calc(var(--d) * 2) var(--e);
     }
     &:nth-child(1):before {
-        background-image: url(./img/sante.png);
+        background-image: url(../img/sante.png);
         background-position-y: -47px;
     }
     &:nth-child(2):before {
-        background-image: url(./img/repas.jpg);
+        background-image: url(../img/repas.jpg);
         background-position-x: -150px;
         background-position-y: -10px;
     }
     &:nth-child(3):before {
-        background-image: url(./img/mode.jpg);
+        background-image: url(../img/mode.jpg);
         background-position-x: -25px;
     }
     &:nth-child(4):before {
-        background-image: url(./img/sorties.jpg);
+        background-image: url(../img/sorties.jpg);
     }
     &:nth-child(5):before {
-        background-image: url(./img/jeux.png);
+        background-image: url(../img/jeux.png);
         background-position-x: -120px;
         background-position-y: -25px;
         ;

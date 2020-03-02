@@ -1,6 +1,6 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import logo from './img/logo.svg';
+import './styleSheets/App.css';
 import Menu from './Menu';
 import Firebase, { FirebaseContext } from './components/Firebase';
 import Content from './Content.jsx';
@@ -33,19 +33,17 @@ function App() {
 class Header extends React.Component {
   render() {
      return (
-        <div>
            <div className="App">
-           
-            <span>
-              <h1 className="titre">Peluche c</h1>
-              <img className="panda" src={require('./img/panda.svg')} />
-              <h1 className="titre">nnectée</h1>
-            
-            </span>
-          
-            <Menu maFonction="" />
+                <div class="logo-container">
+                      <div class="logo-image-section">
+                        <img className= "brush" src={require('./img/fond-logo.png')} />
+                      </div>  
+                      <div class="logo-section">
+                        <h1 className="titre">Peluche c<span><img className="panda" src={require('./img/panda.svg')} /></span>nnectée</h1>
+                      </div>
+                </div>
+                <Menu maFonction="" /> 
           </div>
-        </div>
      );
   }
 }

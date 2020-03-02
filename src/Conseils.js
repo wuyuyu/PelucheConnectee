@@ -12,7 +12,7 @@ import ConseilDent from './ConseilDent';
 import ConseilCaca from './ConseilCaca';
 //import Message from './Message';
 //import BoutonLike from './BoutonLike';
-import './conseilMenu.scss';
+import './styleSheets/conseilMenu.scss';
 
 export default class Conseils extends Component{
 
