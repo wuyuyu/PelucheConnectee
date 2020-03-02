@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import './button.scss'
+import './styleSheets/button.scss'
 import config from "./firebaseconfig.js";
 
 import {

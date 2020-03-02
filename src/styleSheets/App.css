@@ -1,5 +1,13 @@
+body,
+html {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 .App {
     text-align: center;
+    width: 100%;
 }
 
 .App-logo {
@@ -25,10 +33,9 @@ label {}
 
 .divForm {}
 
-#Horloge{
+#Horloge {
     position: absolute;
     top: 25%;
-
 }
 
 .logo-container {

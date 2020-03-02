@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import * as firebase from "firebase";
 import config from "./components/Firebase/firebaseconfig.js";
 import { gsap } from 'gsap';
-import './orderButton.scss';
+import './styleSheets/orderButton.scss';
 import img from './img/peluche.jpeg';
 //import './styleSheets/slideStyle.css';
 import {
