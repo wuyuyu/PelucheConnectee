@@ -12,6 +12,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import Clock from './clock';
 // import { Provider } from 'react-redux';
 // import { createStore } from 'redux';
 // import reducer from './redux/reducers';
@@ -21,6 +22,7 @@ function App() {
     <div>
       <body>
         <Header />
+       
         <Content />
         <Footer/>
       </body>
@@ -33,11 +35,14 @@ class Header extends React.Component {
      return (
         <div>
            <div className="App">
+           
             <span>
               <h1 className="titre">Peluche c</h1>
               <img className="panda" src={require('./img/panda.svg')} />
               <h1 className="titre">nnectée</h1>
+            
             </span>
+          
             <Menu maFonction="" />
           </div>
         </div>
@@ -50,6 +55,7 @@ class Footer extends React.Component {
     return (
       <div id='footer'>
         <p>Romain, Antoine, Tania et Yuyuan.</p>
+        <Clock/>
      </div>
      );
   }

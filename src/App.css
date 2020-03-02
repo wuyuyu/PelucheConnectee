@@ -21,6 +21,11 @@ label {}
 
 .divForm {}
 
+#Horloge{
+    position: absolute;
+    top: 25%;
+
+}
 .lien {
     font-size: 20px;
     display: flex;
