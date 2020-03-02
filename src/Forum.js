@@ -46,16 +46,16 @@ export default class Forum extends Component{
                 <Link className="forum pulse"> Le Coronavirus</Link>
                 </div>
                 <div className="forum">
-                <Link className="forum pulse">La lenteur antillaise</Link>
+                <Link className="forum pulse">La Gastro</Link>
                 </div>
                 <div className="forum">
-              <Link className="forum pulse"> Roi des forêts</Link>
+              <Link className="forum pulse">Les premières poussées dentaires</Link>
               </div>
               <div className="forum">
-                <Link className="forum pulse"> Le zouk love est il socialement acceptable?</Link>
+                <Link className="forum pulse">Le pot</Link>
                 </div>
                 <div className="forum">
-                <Link className="forum pulse"> 50 nuances de Rhum</Link>
+                <Link className="forum pulse">Idées de sorties sur Pariss</Link>
                 </div>
                 <form>
                 <button  type ="submit" className="fill">

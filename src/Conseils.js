@@ -64,16 +64,16 @@ export default class Conseils extends Component{
                 <h2>Liste conseil:  </h2>   
                 <MsgCons userName="Gastro" />
                 <div className="lien">
-                <Link to="/conseilGastro">Viens voir comment on la sèche cette satanée Gastro !</Link>
+                <Link to="/conseilGastro">Comment lutter contre la gastro !</Link>
                 </div>
                 
+                <MsgCons userName="L'hiver" />
+                <div className="lien">
+                <Link to="/dents">Booster les défenses immunitaires de bébé !</Link>
+                </div>
                 <MsgCons userName="Les dents" />
                 <div className="lien">
-                <Link to="/dents">Ptet lui arracher les dents, viens voir comment faire !</Link>
-                </div>
-                <MsgCons userName="Problème fécal" />
-                <div className="lien">
-                <Link to="/caca">Marre de ramasser la merde ?</Link>
+                <Link to="/caca">Soulager bébé quand il fait ses dents</Link>
 
 
                 </div>

@@ -30,8 +30,10 @@ function FormattedDate(props) {
   
     render() {
       return (
+        <div>
         <div id="Horloge">
           <FormattedDate date={this.state.date} />
+        </div>
         </div>
       );
     }

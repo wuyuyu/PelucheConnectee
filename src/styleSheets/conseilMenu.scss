@@ -1,8 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Cardo:400i|Rubik:400,700&display=swap');
-$imageIds: img,
-img,
-img,
-img;
 $bp-md: 600px;
 $bp-lg: 800px;
 :root {
@@ -12,19 +8,10 @@ $bp-lg: 800px;
     --font-serif: 'Cardo', serif;
 }
 
-* {
+
+/* * {
     box-sizing: border-box;
-}
-
-html,
-body {
-    height: 100%;
-}
-
-body {
-    display: grid;
-    place-items: center;
-}
+} */
 
 .page-content {
     display: grid;
