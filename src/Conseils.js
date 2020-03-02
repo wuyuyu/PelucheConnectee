@@ -12,6 +12,7 @@ import ConseilDent from './ConseilDent';
 import ConseilCaca from './ConseilCaca';
 //import Message from './Message';
 //import BoutonLike from './BoutonLike';
+import './conseilMenu.scss';
 
 export default class Conseils extends Component{
 
@@ -19,10 +20,41 @@ export default class Conseils extends Component{
 
 
     render(){
+
+         
+
         return(
+           
             
             <div>
                 <Router>
+                <div>
+                <main class="page-content">
+                    <div class="card">
+                        <div class="content">
+                            <h2 class="title">Santé</h2>
+                            <p class="copy">Découvrez tous les conseils santé dédiés aux enfants de 0 à 6 ans ...</p><button class="btn">View Trips</button></div>
+                    </div>
+                    <div class="card">
+                        <div class="content">
+                            <h2 class="title">Mode</h2>
+                            <p class="copy">Découvrez les produits Mode Bébé parmi la collection exclusive. Commandez en ligne et faites-vous livrer à domicile ou en magasin.
+</p><button class="btn">View Trips</button></div>
+                    </div>
+                    <div class="card">
+                        <div class="content">
+                            <h2 class="title">Sorties</h2>
+                            <p class="copy">It's the desert you've always dreamed of</p><button class="btn">Book Now</button></div>
+                    </div>
+                    <div class="card">
+                        <div class="content">
+                            <h2 class="title">Jeux</h2>
+                            <p class="copy">Seriously, straight up, just blast off into outer space today</p><button class="btn">Book Now</button></div>
+                    </div>
+                </main>
+                </div>
+
+
                 <h2>Liste conseil:  </h2>   
                 <MsgCons userName="Gastro" />
                 <div className="lien">
@@ -36,6 +68,8 @@ export default class Conseils extends Component{
                 <MsgCons userName="Problème fécal" />
                 <div className="lien">
                 <Link to="/caca">Marre de ramasser la merde ?</Link>
+
+
                 </div>
                
                 <Switch>
@@ -44,6 +78,7 @@ export default class Conseils extends Component{
                     <Route path="/dents" component={ConseilDent} />
                     <Route path="/caca" component={ConseilCaca} />
                 </Switch>
+
                 </Router>
             </div>
 
