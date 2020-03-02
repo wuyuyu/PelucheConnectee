@@ -37,9 +37,15 @@ export default class Conseils extends Component{
                     </div>
                     <div class="card">
                         <div class="content">
+                            <h2 class="title">Repas</h2>
+                            <p class="copy">Seriously, straight up, just blast off into outer space today</p><button class="btn">Book Now</button></div>
+                    </div>
+                    <div class="card">
+                        <div class="content">
                             <h2 class="title">Mode</h2>
                             <p class="copy">Découvrez les produits Mode Bébé parmi la collection exclusive. Commandez en ligne et faites-vous livrer à domicile ou en magasin.
-</p><button class="btn">View Trips</button></div>
+                            </p><button class="btn">View Trips</button>
+                        </div>
                     </div>
                     <div class="card">
                         <div class="content">
