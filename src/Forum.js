@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import './button.scss'
 import config from "./firebaseconfig.js";
 
 import {
@@ -40,19 +41,44 @@ export default class Forum extends Component{
         return(
             <div>
             <Router>
-                <h4>Choisir votre Topic:  </h4>
-                <select name="sujet">
+                <h4 className="forumT">Choisissez votre sujet  </h4>
+                <div className="forum">
+                <Link className="forum pulse"> Le Coronavirus</Link>
+                </div>
+                <div className="forum">
+                <Link className="forum pulse">La lenteur antillaise</Link>
+                </div>
+                <div className="forum">
+              <Link className="forum pulse"> Roi des forêts</Link>
+              </div>
+              <div className="forum">
+                <Link className="forum pulse"> Le zouk love est il socialement acceptable?</Link>
+                </div>
+                <div className="forum">
+                <Link className="forum pulse"> 50 nuances de Rhum</Link>
+                </div>
+                <form>
+                <button  type ="submit" className="fill">
+                    <Link to="/Topic">Nouveau sujet </Link>
+                    </button>
+                 </form>
+                 
+                
+                
+                
+
+                {/* <select name="sujet">
                 <option> Bucharest </option>
                 <option>Coronavirus par tout ne sort pas de chez toi</option>
                 <option> Madrid </option>
-                </select>                
+                </select>                 */}
                 
-                < Message/>
+                {/* < Message/>
                 < Message userName="dddd" text="eerger"/>
                 < Message userName="dddd" text="eerger"/>
-                < BoutonLike/>
-                <button onClick={() => this.toggleNewTopic()}>New Topic</button>
-                <button onClick={()=> this.toggleRepondreMessage()}>New Message</button>
+                < BoutonLike/> */}
+                {/* <button onClick={() => this.toggleNewTopic()}>New Topic</button>
+                <button onClick={()=> this.toggleRepondreMessage()}>New Message</button> */}
                 {this.state.newTopic && <NewTopic send={() => this.toggleNewTopic()} />}
                 {this.state.repondreMessage && <RepondreMessage send={()=>this.toggleRepondreMessage()}/>}
 

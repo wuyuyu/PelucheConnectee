@@ -35,13 +35,17 @@ class Header extends React.Component {
      return (
         <div>
            <div className="App">
-           
-            <span>
-              <h1 className="titre">Peluche c</h1>
-              <img className="panda" src={require('./img/panda.svg')} />
-              <h1 className="titre">nnectée</h1>
-            
-            </span>
+                <div class="logo-container">
+                      <div class="logo-image-section">
+                        <img className= "brush" src={require('./img/fond-logo.png')} />
+                      </div>  
+                      <div class="logo-section">
+                        <h1 className="titre">Peluche c<span><img className="panda" src={require('./img/panda.svg')} /></span>nnectée</h1>
+                      </div>
+                </div>
+
+
+      
           
             <Menu maFonction="" />
           </div>
