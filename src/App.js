@@ -55,14 +55,13 @@ class Footer extends React.Component {
     return (
       <div id='footer'>
         <p>Romain, Antoine, Tania et Yuyuan.</p>
-        <Clock/>
+        <br/>
+        <p>
+          <Clock/>
+        </p>
      </div>
      );
   }
-}
-
-function formatDate(date) {
-  return date.toLocaleDateString();
 }
 
 export function RepondreMessage(){
