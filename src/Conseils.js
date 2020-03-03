@@ -14,10 +14,19 @@ import ConseilCaca from './ConseilCaca';
 //import BoutonLike from './BoutonLike';
 import './conseilMenu.scss';
 
+
+
 export default class Conseils extends Component{
 
 
+cache = ()=>{
+    document.getElementById("sante").style.display="none";
+    document.getElementById("repas").style.display="none";
+    document.getElementById("mode").style.display="none";
+    document.getElementById("jeux").style.display="none";
+    document.getElementById("sorties").style.display="none";
 
+}
 
     render(){
 
@@ -30,29 +39,29 @@ export default class Conseils extends Component{
                 <Router>
                 <div>
                 <main class="page-content">
-                    <div class="card">
+                    <div class="card" id='sante'>
                         <div class="content">
                             <h2 class="title">Santé</h2>
-                            <p class="copy">Découvrez tous les conseils santé dédiés aux enfants de 0 à 6 ans ...</p><button class="btn">View Trips</button></div>
+                            <p class="copy">Découvrez tous les conseils santé dédiés aux enfants de 0 à 6 ans ...</p><button class="btn" onClick={()=>{this.cache();}}>View Trips</button></div>
                     </div>
-                    <div class="card">
+                    <div class="card" id='repas'>
                         <div class="content">
                             <h2 class="title">Repas</h2>
-                            <p class="copy">Seriously, straight up, just blast off into outer space today</p><button class="btn">Book Now</button></div>
+                            <p class="copy">Seriously, straight up, just blast off into outer space today</p><button class="btn" onClick={this.cache}>Book Now</button></div>
                     </div>
-                    <div class="card">
+                    <div class="card" id='mode'>
                         <div class="content">
                             <h2 class="title">Mode</h2>
                             <p class="copy">Découvrez les produits Mode Bébé parmi la collection exclusive. Commandez en ligne et faites-vous livrer à domicile ou en magasin.
                             </p><button class="btn">View Trips</button>
                         </div>
                     </div>
-                    <div class="card">
+                    <div class="card" id='sorties'>
                         <div class="content">
                             <h2 class="title">Sorties</h2>
                             <p class="copy">It's the desert you've always dreamed of</p><button class="btn">Book Now</button></div>
                     </div>
-                    <div class="card">
+                    <div class="card" id='jeux'>
                         <div class="content">
                             <h2 class="title">Jeux</h2>
                             <p class="copy">Seriously, straight up, just blast off into outer space today</p><button class="btn">Book Now</button></div>
