@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import * as firebase from "firebase";
 import config from "./firebaseconfig.js";
-import Avatar from "./Avatar";
+import Avatar from "./Avatar.jsx";
+import './styleSheets/button.scss'
 
 
 export default class Profil extends Component{
@@ -150,7 +151,7 @@ saveUser(nom, prenom, ageEnfant, userId) {
       </div>
       <div className="divForm">
       </div>
-      <button type="submit" onClick={this.submitForm} >Valider</button>
+      <button className='slide' type="submit" onClick={this.submitForm} >Valider</button>
     </form> 
      }
      {userId == false &&
