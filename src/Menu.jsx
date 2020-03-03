@@ -6,15 +6,15 @@ import {
     Route,
     Link
   } from "react-router-dom";
-  import InscriptionPage from './Inscription';
-  import ConnexionPage from './Connexion';
-  import Forum from './Forum';
-  import Boutique from './Boutique';
-  import About from './About';
-  import Profil from './Profil';
-  import Contact from './Contact';
-  import Conseils from './Conseils';
-  import Accueil from './Accueil';
+  import InscriptionPage from './Inscription.jsx';
+  import ConnexionPage from './Connexion.jsx';
+  import Forum from './Forum.jsx';
+  import Boutique from './Boutique.jsx';
+  import About from './About.jsx';
+  import Profil from './Profil.jsx';
+  import Contact from './Contact.jsx';
+  import Conseils from './Conseils.jsx';
+  import Accueil from './Accueil.jsx';
 
 export default class Menu extends Component{
   constructor(props) {

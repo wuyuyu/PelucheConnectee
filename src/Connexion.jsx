@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import * as firebase from "firebase";
+import './styleSheets/button.scss';
 import Firebase, { FirebaseContext } from './components/Firebase';
 
 import {
@@ -37,9 +38,20 @@ class Connexion extends Component {
 
     handleDeco = (event) =>{
         this.state.fb.doSignOut();
+        this.hidden('disconnect');
+        this.show('connect');
         alert("vous êtes bien déconnecté");
     }
 
+    hidden(id){
+        document.getElementById(id).style.display= 'none';
+    }
+
+    show(id){
+        document.getElementById(id).style.display= 'flex';
+        document.getElementById(id).style.margin= 'auto';
+        document.getElementById(id).style.marginTop= '10px';
+    }
 
     handleClick = (event) => {
         const { email, password} = this.state;
@@ -54,6 +66,9 @@ class Connexion extends Component {
           });
          console.log("connectée");
         event.preventDefault();
+        this.hidden('connect');
+        this.show('disconnect');
+
     };
 
     render() {
@@ -68,15 +83,15 @@ class Connexion extends Component {
                 <div className="divCO">
                     <div id="password" value="testMDP">Mot de passe:</div>
                     <label>
-                        <input type="text" name="password" value={this.state.password} onChange={this.handleChange}/>
+                        <input type="password" name="password" value={this.state.password} onChange={this.handleChange}/>
                     </label>
                     <div>
                     </div>
-                    <button type="submit" onClick={this.handleClick}>Connexion</button>
-                    <div>
+                    <button id='connect' className='slide' type="submit" onClick={this.handleClick}>Connexion</button>
+                    <div style={{marginTop:'10px'}}>
                         <Link to="/inscription">Pas encore inscrit?</Link>
                     </div>
-                    <div><button type="submit" onClick={this.handleDeco}>Deconnexion</button></div>
+                    <div><button id='disconnect' className='offset' type="submit" style={{display:'none'}} onClick={this.handleDeco}>Deconnexion</button></div>
                 </div>
             </div>
         );

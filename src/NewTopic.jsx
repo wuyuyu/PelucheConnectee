@@ -1,6 +1,6 @@
 import React , {Component}from 'react';
 import * as firebase from "firebase";
-import Forum from './Forum';
+import Forum from './Forum.jsx';
 import './styleSheets/button.scss'
 export default class NewTopic extends Component{
 

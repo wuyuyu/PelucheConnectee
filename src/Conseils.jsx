@@ -1,21 +1,19 @@
 import React, { Component } from "react";
-import Bouton from './App';
-import MsgCons from './MsgCons'
+import Bouton from './App.jsx';
+import MsgCons from './MsgCons.jsx';
 import {
     BrowserRouter as Router,
     Switch,
     Route,
     Link
   } from "react-router-dom";
-import ConseilGastro from './ConseilGastro';
-import ConseilDent from './ConseilDent';
-import ConseilCaca from './ConseilCaca';
+import ConseilGastro from './ConseilGastro.jsx';
+import ConseilDent from './ConseilDent.jsx';
+import ConseilCaca from './ConseilCaca.jsx';
 //import Message from './Message';
 //import BoutonLike from './BoutonLike';
 import './styleSheets/conseilMenu.scss';
-import ConseilImmun from "./ConseilImmun";
-
-
+import ConseilImmun from './ConseilImmun.jsx';
 
 export default class Conseils extends Component{
 

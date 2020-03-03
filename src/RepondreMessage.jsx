@@ -1,6 +1,6 @@
 import React , {Component}from 'react';
 import * as firebase from "firebase";
-import Forum from './Forum';
+import Forum from './Forum.jsx';
 
 export default class RepondreMessage extends Component{
 

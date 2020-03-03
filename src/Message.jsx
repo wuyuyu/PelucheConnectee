@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import './styleSheets/Message.css';
 import * as firebase from"firebase";
 import config from "./firebaseconfig.js";
-import BoutonLike from "./BoutonLike";
+import BoutonLike from "./BoutonLike.jsx";
 
 export default class Message extends Component{
     constructor(props){

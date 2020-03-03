@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import img from './img/dents.jpeg';
-import Bouton from './App';
+import Bouton from './App.jsx';
 import {
     BrowserRouter as Router,
     Switch,

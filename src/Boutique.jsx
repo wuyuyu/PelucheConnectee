@@ -3,6 +3,7 @@ import * as firebase from "firebase";
 import config from "./components/Firebase/firebaseconfig.js";
 import { gsap } from 'gsap';
 import './styleSheets/orderButton.scss';
+import './styleSheets/cadre.css';
 import img from './img/peluche.jpeg';
 //import './styleSheets/slideStyle.css';
 import {
@@ -142,7 +143,7 @@ export default class Boutique extends Component {
         return(
             <div>
                 <h3>Vic la Peluche</h3>
-                <div className="rolling" >
+                <div class="gradient-border" id="box">
                     <img src={img} id="movieSlider" alt="Movie Slider"/>
                 </div>
                 <p>{prenom} Inscrivez-vous sur la liste d'attente</p> 

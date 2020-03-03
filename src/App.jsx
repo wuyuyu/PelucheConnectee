@@ -4,8 +4,8 @@ import './styleSheets/App.css';
 import './styleSheets/footerStyle.css';
 import Firebase, { FirebaseContext } from './components/Firebase';
 import Content from './Content.jsx';
-import Header from './Header';
-import Footer from './footer';
+import Header from './Header.jsx';
+import Footer from './footer.jsx';
 
 function App() {
   return (

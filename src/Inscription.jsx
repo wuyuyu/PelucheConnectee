@@ -2,7 +2,7 @@
 import React, { Component } from "react";
 //import * as firebase from "firebase";
 import Firebase, { FirebaseContext } from './components/Firebase';
-import ConnexionPage from './Connexion';
+import ConnexionPage from './Connexion.jsx';
 import {
   BrowserRouter as Router,
   Switch,

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Bouton from './App';
+import Bouton from './App.jsx';
 import img from './img/douleur.jpg';
 
 import {
