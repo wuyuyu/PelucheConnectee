@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import './Message.css';
+import './styleSheets/Message.css';
 import * as firebase from"firebase";
 import config from "./firebaseconfig.js";
 import BoutonLike from "./BoutonLike";

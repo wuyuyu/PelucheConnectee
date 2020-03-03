@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Bouton from './App';
-import img from './img/toilette.jpg';
+import img from './img/douleur.jpg';
 
 import {
     BrowserRouter as Router,

@@ -1,12 +1,10 @@
 import React from 'react';
-import './contactStyle.css'
+import './styleSheets/contactStyle.css'
 
 export default function Contact(){
 
     return (
       <div>
-        <br/>
-        <br/>
         <div id='form1'>
         <h3>Aidez-nous à concevoir la peluche idéale!</h3>
         <br/>
@@ -41,7 +39,7 @@ export default function Contact(){
           <div className="checkBox">
             <label>
               <input type="checkbox" />
-                Videophone
+                Visiophone
             </label>
           </div>
           <div className="checkBox">
@@ -65,7 +63,7 @@ export default function Contact(){
         <br/>
         <div>
           <head><title>Form</title></head>
-            <div id='container'>
+            <div id='container1'>
               <h2 class='contact-form'>Contact</h2>
               <form ng-submit='addMessage' action="index.html" method='post'>
                 <label className='contactLabel' for="name">Nom:</label>

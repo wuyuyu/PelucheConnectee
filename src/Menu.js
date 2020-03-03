@@ -14,6 +14,7 @@ import {
   import Profil from './Profil';
   import Contact from './Contact';
   import Conseils from './Conseils';
+  import Accueil from './Accueil';
 
 export default class Menu extends Component{
   constructor(props) {
@@ -48,7 +49,7 @@ export default class Menu extends Component{
 
             <Switch>
               <Route exact path="/" />
-              {/*<Route path="/accueil" component={Accueil} />*/}
+              <Route path="/accueil" component={Accueil} />
               <Route path="/connexion" component={ConnexionPage} />
               <Route path="/inscription" component={InscriptionPage} />
               <Route path="/forum" component={Forum} />

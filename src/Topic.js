@@ -24,14 +24,14 @@ export default class Topic extends Component{
 
 
 
-    ender(){
+    render(){
         return(
             <div>
-                <div className="divCo">
-                    <div id="titre" value="test@mail.fr"> titre du Topic: </div>
-                    <label>
-                        <input type="text" name="topic" value={this.state.titre} onChange={this.handleChange}/>
-                    </label>
+                <div className="Sujet">
+                    <label>Titre du sujet</label>
+                    <textarea >
+                    </textarea>
+                   
                  </div>  
             
 

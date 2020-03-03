@@ -12,7 +12,8 @@ import ConseilDent from './ConseilDent';
 import ConseilCaca from './ConseilCaca';
 //import Message from './Message';
 //import BoutonLike from './BoutonLike';
-import './conseilMenu.scss';
+import './styleSheets/conseilMenu.scss';
+import ConseilImmun from "./ConseilImmun";
 
 
 
@@ -73,18 +74,20 @@ cache = ()=>{
                 <h2>Liste conseil:  </h2>   
                 <MsgCons userName="Gastro" />
                 <div className="lien">
-                <Link to="/conseilGastro">Viens voir comment on la sèche cette satanée Gastro !</Link>
+                <Link to="/conseilGastro">Comment lutter contre la gastro !</Link>
                 </div>
                 
+                <MsgCons userName="L'hiver" />
+                <div className="lien">
+                <Link to="/defenses">Booster les défenses immunitaires de bébé !</Link>
+                </div>
                 <MsgCons userName="Les dents" />
                 <div className="lien">
-                <Link to="/dents">Ptet lui arracher les dents, viens voir comment faire !</Link>
+                <Link to="/dents">Soulager bébé quand il fait ses dents</Link>
                 </div>
-                <MsgCons userName="Problème fécal" />
+                <MsgCons userName="Les dents" />
                 <div className="lien">
-                <Link to="/caca">Marre de ramasser la merde ?</Link>
-
-
+                <Link to="/caca">Les selles de bébé</Link>
                 </div>
                
                 <Switch>
@@ -92,6 +95,7 @@ cache = ()=>{
                     <Route path="/conseilGastro" component={ConseilGastro} />
                     <Route path="/dents" component={ConseilDent} />
                     <Route path="/caca" component={ConseilCaca} />
+                    <Route path="/defenses" component={ConseilImmun} />
                 </Switch>
 
                 </Router>
