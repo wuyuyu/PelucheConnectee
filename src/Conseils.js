@@ -62,24 +62,20 @@ export default class Conseils extends Component{
                 </div>
 
 
-                <h2>Liste conseil:  </h2>   
-                <MsgCons userName="Gastro" />
+                <h2>Liste conseil:  </h2>
+                <div className="lien"> 
+                <Link to="/conseilGastro"><MsgCons titre="Comment lutter contre la gastro !" auteur="Michel" /></Link>
+                </div>
                 <div className="lien">
-                <Link to="/conseilGastro">Comment lutter contre la gastro !</Link>
+                <Link to="/defenses"><MsgCons titre="Booster les défenses immunitaires de bébé !" auteur="François" /></Link>
+                </div>
+                <div className="lien">
+                <Link to="/dents"><MsgCons titre="Soulager bébé quand il fait ses dents" auteur="Michelline" /></Link>
+                </div>
+                <div className="lien">
+                <Link to="/caca"><MsgCons titre="Les selles de bébé" auteur="Françoise" /></Link>
                 </div>
                 
-                <MsgCons userName="L'hiver" />
-                <div className="lien">
-                <Link to="/defenses">Booster les défenses immunitaires de bébé !</Link>
-                </div>
-                <MsgCons userName="Les dents" />
-                <div className="lien">
-                <Link to="/dents">Soulager bébé quand il fait ses dents</Link>
-                </div>
-                <MsgCons userName="Les dents" />
-                <div className="lien">
-                <Link to="/caca">Les selles de bébé</Link>
-                </div>
                
                 <Switch>
                     <Route exact path="/" />

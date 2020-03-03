@@ -67,7 +67,7 @@
 //=== Set button colors
 // If you wonder why use Sass vars or CSS custom properties...
 // Make a map with the class names and matching colors
-$colors: ( fill: #a972cb, pulse: #7DEABB, close: #ff7f82, raise: #918379, up: #e4cb58, slide: #8fc866, offset: #19bc8b);
+$colors: ( fill: rgb(128, 206, 188), pulse: #7DEABB, close: #ff7f82, raise: #918379, up: #e4cb58, slide: #8fc866, offset: #19bc8b);
 // Sass variables compile to a static string; CSS variables are dynamic and inherited
 // Loop through the map and set CSS custom properties using Sass variables
 @each $button,

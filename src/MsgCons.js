@@ -7,8 +7,8 @@ export default class MsgCons extends Component{
     constructor(props){
         super(props);
         this.state = {
-            nom_expediteur :'',
-            msgC:'',
+            titre :'',
+            auteur:'',
             date:''
 
         }
@@ -29,22 +29,11 @@ export default class MsgCons extends Component{
     render(){
         return(
             <div className="msgC">
-               
                <div className="img">
-            <img src={ require('./img/panda.svg') } />
+                   <img src={ require('./img/panda.svg') } />
+                   <p>{this.props.titre} by {this.props.auteur}</p>
+                </div>
             </div>
-            <div className="user">
-            <h3>{this.props.userName}</h3>
-            </div>
-            
-            <div className="texte">
-                <p>{this.props.text}</p>
-            </div>
-            
-            </div>
-
-           
-
         );
     }
 }

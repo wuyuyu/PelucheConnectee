@@ -17,9 +17,9 @@ function App() {
         <div id='content'>
           <Content />
         </div>
-        <div id='footer'>
+        {/* <div id='footer'>
           <Footer/>
-        </div> 
+        </div>  */}
       </body>
      </div> 
   );
