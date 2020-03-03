@@ -13,6 +13,7 @@ import ConseilCaca from './ConseilCaca';
 //import Message from './Message';
 //import BoutonLike from './BoutonLike';
 import './styleSheets/conseilMenu.scss';
+import ConseilImmun from "./ConseilImmun";
 
 export default class Conseils extends Component{
 
@@ -69,13 +70,15 @@ export default class Conseils extends Component{
                 
                 <MsgCons userName="L'hiver" />
                 <div className="lien">
-                <Link to="/dents">Booster les défenses immunitaires de bébé !</Link>
+                <Link to="/defenses">Booster les défenses immunitaires de bébé !</Link>
                 </div>
                 <MsgCons userName="Les dents" />
                 <div className="lien">
-                <Link to="/caca">Soulager bébé quand il fait ses dents</Link>
-
-
+                <Link to="/dents">Soulager bébé quand il fait ses dents</Link>
+                </div>
+                <MsgCons userName="Les dents" />
+                <div className="lien">
+                <Link to="/caca">Les selles de bébé</Link>
                 </div>
                
                 <Switch>
@@ -83,6 +86,7 @@ export default class Conseils extends Component{
                     <Route path="/conseilGastro" component={ConseilGastro} />
                     <Route path="/dents" component={ConseilDent} />
                     <Route path="/caca" component={ConseilCaca} />
+                    <Route path="/defenses" component={ConseilImmun} />
                 </Switch>
 
                 </Router>

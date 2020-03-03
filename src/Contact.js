@@ -5,8 +5,6 @@ export default function Contact(){
 
     return (
       <div>
-        <br/>
-        <br/>
         <div id='form1'>
         <h3>Aidez-nous à concevoir la peluche idéale!</h3>
         <br/>
