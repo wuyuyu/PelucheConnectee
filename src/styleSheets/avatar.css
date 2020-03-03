@@ -1,0 +1,73 @@
+#avatar{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;;
+}
+
+.avatar-img {
+    display: flex;
+    margin-right: 20px;
+    border: 0;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    cursor: pointer;
+}
+
+.avatar-img:hover {
+    box-shadow: none;
+    transition: 0.5s;
+}
+
+h1 {
+    font-size: 28px;
+    margin-right: 25px;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
+#avatar img {
+    height: 50px;
+}
+
+.a1{
+background-color: #80deea ;
+}
+
+.a2{
+background-color: #b0bec5;    
+}
+
+.a3{
+background-color: #bcaaa4;    
+}
+
+.a4{
+background-color: #9fa8da;   
+}
+
+.a5{
+background-color: #c5e1a5;    
+}
+
+.a6{
+background-color: #ef9a9a;    
+}
+
+.a7{
+background-color: #a5d6a7;   
+}
+
+.a8{
+background-color: #fff59d;    
+}
+
+.a9{
+background-color: #f48fb1;  
+}

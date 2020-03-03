@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import * as firebase from "firebase";
 import config from "./firebaseconfig.js";
+import Avatar from "./Avatar";
 
 
 export default class Profil extends Component{
@@ -124,6 +125,8 @@ saveUser(nom, prenom, ageEnfant, userId) {
     
     <form id="contactForm" >
       <div className="divForm">
+        <div><Avatar/></div>
+      
         <div>
           Nom :
     </div>

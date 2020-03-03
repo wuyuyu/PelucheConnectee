@@ -9,7 +9,8 @@ import {
   Route,
   Link
 } from "react-router-dom";
-
+import swal from 'sweetalert';
+import './styleSheets/alert.css';
 export default class InscriptionPage extends Component {
     render() {
         return (
@@ -42,7 +43,7 @@ class Inscription extends Component {
           .doCreateUserWithEmailAndPassword(email, password)
           .then(authUser => {
             this.setState({ email:this.state.email, password:this.state.password});
-            alert('Inscription terminée!');
+            swal('Inscription terminée!');
           })
           .catch(error => {
             this.setState({ error });
