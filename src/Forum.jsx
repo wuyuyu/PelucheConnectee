@@ -5,7 +5,7 @@ import * as firebase from "firebase";
 import config from "./firebaseconfig.js";
 
 import {
-BrowserRouter as Router,
+    BrowserRouter as Router,
     Switch,
     Route,
     Link
@@ -16,38 +16,33 @@ import NewTopic from "./NewTopic";
 import RepondreMessage from "./RepondreMessage";
 
 
-export default class Forum extends Component{
+export default class Forum extends Component {
     constructor() {
         super();
-    //     var topic;
-    //     var ref = firebase.database().ref('Topics/');
-    //     console.log(ref);
-    //   ref.on("value", function(snapshot) {
-    //       topic=snapshot.val();
-    //   console.log(topic);
-    //  } );
-    var top = [];
-     var query = firebase.database().ref("Topics").orderByKey();
-query.once("value")
-  .then(function(snapshot) {
-    snapshot.forEach(function(childSnapshot) {
-      // key will be "ada" the first time and "alan" the second time
-      var key = childSnapshot.key;
-      // childData will be the actual contents of the child
-      top.push(childSnapshot.val());
 
-      
-  });
-});
-
-        
         this.state = {
-            topics:top,
+            topics: [],
             newTopic: false,
             repondreMessage: false
         };
     }
 
+    async componentDidMount() {
+        let top = [];
+        var query = firebase.database().ref("Topics").orderByKey();
+
+        await query.once("value")
+            .then(function (snapshot) {
+                snapshot.forEach(function (childSnapshot) {
+                    // key will be "ada" the first time and "alan" the second time
+                    var key = childSnapshot.key;
+                    // childData will be the actual contents of the child
+                    top.push(childSnapshot.val());
+                });
+            });
+            //
+            this.setState({topics:top})
+    }
 
     /* showTopics(jsonObj) {
         var Top = jsonObj['name'];
