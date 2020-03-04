@@ -3,6 +3,7 @@ import React, { Component } from "react";
 //import * as firebase from "firebase";
 import Firebase, { FirebaseContext } from './components/Firebase';
 import ConnexionPage from './Connexion.jsx';
+import './styleSheets/button.scss';
 import {
   BrowserRouter as Router,
   Switch,
@@ -69,7 +70,7 @@ class Inscription extends Component {
                     </label>
                     <div>
                     </div>
-                    <button type="submit" onClick={this.handleClick}>Valider</button>
+                    <button type="submit" className='slide' onClick={this.handleClick}>Valider</button>
                     <div>
                         <Link to="/connexion">Déjà inscrit?</Link>
                     </div>

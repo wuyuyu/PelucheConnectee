@@ -94,7 +94,7 @@ query.once("value")
                  <div id='forum'>
                 <h4 className="forumT">Choisissez votre sujet  </h4>
                 <div className="forum">
-                {listTopic}
+                    <Link className='pulse'>{listTopic}</Link>
                 </div>
                 <form>
                 <button  type ="submit" className="fill" onClick={()=>{this.hidden();this.toggleNewTopic();}} >

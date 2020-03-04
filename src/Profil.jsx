@@ -12,6 +12,13 @@ constructor(props){
   if (userId == null){
     return;
   }
+  var pic;
+  var ref = firebase.database().ref('utilisateurs/' + userId.uid).child("avatar");
+  ref.on("value", function(snapshot) {
+    
+  pic =snapshot.val();
+ 
+  });
   var name;
   var ref = firebase.database().ref('utilisateurs/' + userId.uid).child("nom");
   ref.on("value", function(snapshot) {
@@ -19,8 +26,15 @@ constructor(props){
   name =snapshot.val();
  
   });
-  var nickname;
+  var firstName
   var ref = firebase.database().ref('utilisateurs/' + userId.uid).child("prenom");
+  ref.on("value", function(snapshot) {
+    
+  firstName =snapshot.val();
+ 
+  });
+  var nickname
+  var ref = firebase.database().ref('utilisateurs/' + userId.uid).child("pseudo");
   ref.on("value", function(snapshot) {
     
   nickname =snapshot.val();
@@ -36,8 +50,10 @@ constructor(props){
 
 
   this.state ={
+    avatar:pic,
     nom :name,
-    prenom:nickname,
+    prenom:firstName,
+    pseudo:nickname,
     ageEnfant:ageEnfant,
     id:''
   }
@@ -55,23 +71,23 @@ handleChange = (event) => {
 }
 
 
- submitForm =(e) =>{
-    e.preventDefault();
-    let userId =  firebase.auth().currentUser;
+submitForm =(e) =>{
+  e.preventDefault();
+  let userId =  firebase.auth().currentUser;
+
+  console.log("here i am" + userId.uid);
+    this.saveUser(this.state.nom, this.state.prenom, this.state.pseudo, this.state.ageEnfant,userId.uid);
+    //this.setState({nom:'', prenom:'', adresse:'',motDePasse:''});
   
-    console.log("here i am" + userId.uid);
-     this.saveUser(this.state.nom, this.state.prenom,this.state.ageEnfant,userId.uid);
-     //this.setState({nom:'', prenom:'', adresse:'',motDePasse:''});
     
-     
-     console.log(userId.uid)
-      var ref = firebase.database().ref('utilisateurs/' + userId.uid).child("nom");
-      ref.on("value", function(snapshot) {
-      console.log(snapshot.val());
-     } );
-    // this.getUserData();
-    
- }
+    console.log(userId.uid)
+    var ref = firebase.database().ref('utilisateurs/' + userId.uid).child("nom");
+    ref.on("value", function(snapshot) {
+    console.log(snapshot.val());
+    } );
+  // this.getUserData();
+  
+}
 
  
 
@@ -94,11 +110,12 @@ getUserData = () => {
 getInputVal(id){
     return document.getElementById(id).value;
 }
-saveUser(nom, prenom, ageEnfant, userId) {
+saveUser(nom, prenom, pseudo, ageEnfant, userId) {
   console.log("l'id est" + userId)
   firebase.database().ref('utilisateurs/' + userId).set({
     nom: nom,
     prenom: prenom,
+    pseudo: pseudo,
     ageEnfant : ageEnfant,
     id: userId
   });
@@ -126,8 +143,8 @@ saveUser(nom, prenom, ageEnfant, userId) {
     
     <form id="contactForm" >
       <div className="divForm">
+
         <div><Avatar/></div>
-      
         <div>
           Nom :
     </div>
@@ -137,12 +154,18 @@ saveUser(nom, prenom, ageEnfant, userId) {
       </div>
       <div className="divForm">
         <div>
-          Prénom :  {this.state.prenom}
+          Prénom :
     </div>
         <label>
           <input type="text" name="prenom" value={this.state.prenom} onChange={this.handleChange} />
         </label>
       </div>
+      <div>
+          Pseudo :
+      </div>
+        <label>
+          <input type="text" name="pseudo" value={this.state.pseudo} onChange={this.handleChange} />
+        </label>
       <div className="divForm">
         <div>Age de votre enfant : </div>
         <label>
