@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import * as firebase from "firebase";
 import config from "./firebaseconfig.js";
-import Avatar from "./Avatar.jsx";
-import './styleSheets/button.scss'
+import './styleSheets/button.scss';
+import './styleSheets/avatar.css';
 
 
 export default class Profil extends Component{
@@ -76,7 +76,7 @@ submitForm =(e) =>{
   let userId =  firebase.auth().currentUser;
 
   console.log("here i am" + userId.uid);
-    this.saveUser(this.state.nom, this.state.prenom, this.state.pseudo, this.state.ageEnfant,userId.uid);
+    this.saveUser(this.state.avatar, this.state.nom, this.state.prenom, this.state.pseudo, this.state.ageEnfant,userId.uid);
     //this.setState({nom:'', prenom:'', adresse:'',motDePasse:''});
   
     
@@ -110,15 +110,21 @@ getUserData = () => {
 getInputVal(id){
     return document.getElementById(id).value;
 }
-saveUser(nom, prenom, pseudo, ageEnfant, userId) {
+saveUser(avatar, nom, prenom, pseudo, ageEnfant, userId) {
   console.log("l'id est" + userId)
   firebase.database().ref('utilisateurs/' + userId).set({
+    avatar:avatar,
     nom: nom,
     prenom: prenom,
     pseudo: pseudo,
     ageEnfant : ageEnfant,
     id: userId
   });
+}
+
+click(anim){
+  this.setState({avatar:anim});
+  console.log(this.state);
 }
 //  saveUserOld(nom,prenom,ageEnfant,userId){
 
@@ -144,7 +150,24 @@ saveUser(nom, prenom, pseudo, ageEnfant, userId) {
     <form id="contactForm" >
       <div className="divForm">
 
-        <div><Avatar/></div>
+      <div>
+        <div>
+            <h1>Sélectionnez votre avatar :</h1>
+            <br/>
+        </div>
+
+        <div id = "avatar">
+            <div className = "a1 avatar-img" name='chat' onClick={()=>{this.click('chat')}}> <img src={require('./img/cat.svg')}/> </div>
+            <div className = "a3 avatar-img" name='cochon' onClick={()=>{this.click('cochon')}}><img src={require('./img/pig.svg')}/></div>
+            <div className = "a4 avatar-img" name='hamster' onClick={()=>{this.click('hamster')}}><img src={require('./img/hamster.svg')}/></div>
+            <div className = "a5 avatar-img" name='panda' onClick={()=>{this.click('panda')}}><img src={require('./img/panda.svg')}/></div>
+            <div className = "a6 avatar-img" name='lion' onClick={()=>{this.click('lion')}}><img src={require('./img/lion.svg')}/></div>
+            <div className = "a7 avatar-img" name='singe' onClick={()=>{this.click('singe')}}><img src={require('./img/monkey.svg')}/></div>
+            <div className = "a8 avatar-img" name='hibou' onClick={()=>{this.click('hibou')}}><img src={require('./img/owl.svg')}/></div>
+            <div className = "a9 avatar-img" name='souris' onClick={()=>{this.click('souris')}}><img src={require('./img/rodent.svg')}/></div>
+            <div className = "a2 avatar-img" name='chien' onClick={()=>{this.click('chien')}}><img src={require('./img/dog.svg')}/></div>
+        </div>
+    </div>
         <div>
           Nom :
     </div>

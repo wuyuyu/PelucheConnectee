@@ -22,7 +22,7 @@ click(anim){
     console.log(this.state);
 }
 
-render(){
+/* render(){
 return (
     <div>
         <div>
@@ -42,4 +42,4 @@ return (
             <div className = "a2 avatar-img" name='chien' onClick={()=>{this.click('chien')}}><img src={require('./img/dog.svg')}/></div>
         </div>
     </div>
-);}}
+);}} */

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import './styleSheets/button.scss'
+import './styleSheets/button.scss';
+import './styleSheets/forumStyle.css'
 import * as firebase from "firebase";
 import config from "./firebaseconfig.js";
 
@@ -85,7 +86,7 @@ query.once("value")
         console.log(this.state);
 
         const _topics = this.state.topics;
-       const listTopic = _topics.map((t) => <li key = {t.id}> {t.topic}</li>);
+       const listTopic = _topics.map((t) => <li key = {t.id}> <Link className='forum pulse'>{t.topic}</Link></li>);
        console.log(listTopic);
        console.log(_topics);
         return(
@@ -93,11 +94,9 @@ query.once("value")
             <Router>
                  <div id='forum'>
                 <h4 className="forumT">Choisissez votre sujet  </h4>
-                <div className="forum">
-                    <Link className='pulse'>{listTopic}</Link>
-                </div>
+                <ul>{listTopic}</ul>
                 <form>
-                <button  type ="submit" className="fill" onClick={()=>{this.hidden();this.toggleNewTopic();}} >
+                <button  type ="submit" className="fill nTop" onClick={()=>{this.hidden();this.toggleNewTopic();}} >
                     <Link to="/NewTopic">Nouveau sujet </Link>
                 </button>
             </form>
