@@ -18,20 +18,35 @@ import RepondreMessage from "./RepondreMessage";
 export default class Forum extends Component{
     constructor() {
         super();
-        var name;
-        var ref = firebase.database().ref('Topics/').child('topic');
-        console.log(ref);
-      ref.on("value", function(snapshot) {
-          name=snapshot.val();
-      console.log(name);
-     } );
+    //     var topic;
+    //     var ref = firebase.database().ref('Topics/');
+    //     console.log(ref);
+    //   ref.on("value", function(snapshot) {
+    //       topic=snapshot.val();
+    //   console.log(topic);
+    //  } );
+    var top = [];
+     var query = firebase.database().ref("Topics").orderByKey();
+query.once("value")
+  .then(function(snapshot) {
+    snapshot.forEach(function(childSnapshot) {
+      // key will be "ada" the first time and "alan" the second time
+      var key = childSnapshot.key;
+      // childData will be the actual contents of the child
+      top.push(childSnapshot.val());
+
+      
+  });
+});
+
         
         this.state = {
-            topic:name,
+            topics:top,
             newTopic: false,
             repondreMessage: false
         };
     }
+
 
     /* showTopics(jsonObj) {
         var Top = jsonObj['name'];
@@ -66,25 +81,20 @@ export default class Forum extends Component{
     }
 
     render(){
+       
+        console.log(this.state);
+
+        const _topics = this.state.topics;
+       const listTopic = _topics.map((t) => <li key = {t.id}> {t.topic}</li>);
+       console.log(listTopic);
+       console.log(_topics);
         return(
             <div>
             <Router>
                  <div id='forum'>
                 <h4 className="forumT">Choisissez votre sujet  </h4>
                 <div className="forum">
-                <Link className="forum pulse"> {this.state.topic}</Link>
-                </div>
-                <div className="forum">
-                <Link className="forum pulse">La Gastro</Link>
-                </div>
-                <div className="forum">
-              <Link className="forum pulse">Les premières poussées dentaires</Link>
-              </div>
-              <div className="forum">
-                <Link className="forum pulse">Le pot</Link>
-                </div>
-                <div className="forum">
-                <Link className="forum pulse">Idées de sorties sur Paris</Link>
+                {listTopic}
                 </div>
                 <form>
                 <button  type ="submit" className="fill" onClick={()=>{this.hidden();this.toggleNewTopic();}} >
