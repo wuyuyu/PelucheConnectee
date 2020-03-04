@@ -8,11 +8,11 @@ export default class Header extends React.Component {
       <div>
         <header>
           <div className="App">
-            <div class="logo-container">
-              <div class="logo-image-section">
+            <div className="logo-container">
+              <div className="logo-image-section">
                 <img className= "brush" src={require('./img/fond-logo.png')} />
               </div>  
-              <div class="logo-section">
+              <div className="logo-section">
                 <h1 className="titre">Peluche c<span><img className="panda" src={require('./img/panda.svg')} /></span>nnectée</h1>
               </div>
             </div>

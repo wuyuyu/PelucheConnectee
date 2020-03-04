@@ -124,7 +124,6 @@ saveUser(avatar, nom, prenom, pseudo, ageEnfant, userId) {
 
 click(anim){
   this.setState({avatar:anim});
-  console.log(this.state);
 }
 //  saveUserOld(nom,prenom,ageEnfant,userId){
 
@@ -140,7 +139,7 @@ click(anim){
 // }
 
   render() {
-   
+    console.log(this.state);
      let userId =firebase.auth().currentUser!= null?true:false;
     // console.log("le nom est " + this.state.prenom);
     return (
