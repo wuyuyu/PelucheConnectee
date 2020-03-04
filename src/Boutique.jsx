@@ -143,7 +143,7 @@ export default class Boutique extends Component {
         return(
             <div>
                 <h3>Vic la Peluche</h3>
-                <div class="gradient-border" id="box">
+                <div className="gradient-border" id="box">
                     <img src={img} id="movieSlider" alt="Movie Slider"/>
                 </div>
                 <p>{prenom} Inscrivez-vous sur la liste d'attente</p> 

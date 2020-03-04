@@ -37,33 +37,33 @@ cache = ()=>{
             <div>
                 <Router>
                 <div>
-                <main class="page-content">
-                    <div class="card" id='sante'>
-                        <div class="content">
-                            <h2 class="title">Santé</h2>
-                            <p class="copy">Découvrez tous les conseils santé dédiés aux enfants de 0 à 6 ans ...</p><button class="btn" onClick={()=>{this.cache();}}>View Trips</button></div>
+                <main className="page-content">
+                    <div className="card" id='sante'>
+                        <div className="content">
+                            <h2 className="title">Santé</h2>
+                            <p className="copy">Découvrez tous les conseils santé dédiés aux enfants de 0 à 6 ans ...</p><button className="btn" onClick={()=>{this.cache();}}>View Trips</button></div>
                     </div>
-                    <div class="card" id='repas'>
-                        <div class="content">
-                            <h2 class="title">Repas</h2>
-                            <p class="copy">Seriously, straight up, just blast off into outer space today</p><button class="btn" onClick={this.cache}>Book Now</button></div>
+                    <div className="card" id='repas'>
+                        <div className="content">
+                            <h2 className="title">Repas</h2>
+                            <p className="copy">Seriously, straight up, just blast off into outer space today</p><button className="btn" onClick={this.cache}>Book Now</button></div>
                     </div>
-                    <div class="card" id='mode'>
-                        <div class="content">
-                            <h2 class="title">Mode</h2>
-                            <p class="copy">Découvrez les produits Mode Bébé parmi la collection exclusive. Commandez en ligne et faites-vous livrer à domicile ou en magasin.
-                            </p><button class="btn">View Trips</button>
+                    <div className="card" id='mode'>
+                        <div className="content">
+                            <h2 className="title">Mode</h2>
+                            <p className="copy">Découvrez les produits Mode Bébé parmi la collection exclusive. Commandez en ligne et faites-vous livrer à domicile ou en magasin.
+                            </p><button className="btn">View Trips</button>
                         </div>
                     </div>
-                    <div class="card" id='sorties'>
-                        <div class="content">
-                            <h2 class="title">Sorties</h2>
-                            <p class="copy">It's the desert you've always dreamed of</p><button class="btn">Book Now</button></div>
+                    <div className="card" id='sorties'>
+                        <div className="content">
+                            <h2 className="title">Sorties</h2>
+                            <p className="copy">It's the desert you've always dreamed of</p><button className="btn">Book Now</button></div>
                     </div>
-                    <div class="card" id='jeux'>
-                        <div class="content">
-                            <h2 class="title">Jeux</h2>
-                            <p class="copy">Seriously, straight up, just blast off into outer space today</p><button class="btn">Book Now</button></div>
+                    <div className="card" id='jeux'>
+                        <div className="content">
+                            <h2 className="title">Jeux</h2>
+                            <p className="copy">Seriously, straight up, just blast off into outer space today</p><button className="btn">Book Now</button></div>
                     </div>
                 </main>
                 </div>
