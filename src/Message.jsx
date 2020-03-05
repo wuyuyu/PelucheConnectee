@@ -8,9 +8,11 @@ export default class Message extends Component{
     constructor(props){
         super(props);
         this.state = {
-            userName :'',
+            topic:'',
             texte:'',
-            date:'',
+            pseudo: '',
+            avatar:'',
+            date:''
         };
 
 
@@ -19,12 +21,14 @@ export default class Message extends Component{
 
     }
 
-    saveMessage(userName,texte,date){
+    saveMessage(topic,texte,pseudo,avatar,date){
        var  newMessageRef = this.messageRef.push();
        newMessageRef.set({
-           userName: userName,
-           texte: texte,
-           date: date,
+            topic: topic,
+            texte: texte,
+            pseudo:pseudo,
+            avatar: avatar,
+            date: date
        });
     }
 
@@ -34,14 +38,18 @@ export default class Message extends Component{
         return(
             <div className="message">
                
-            <div className="img">
-            <img src={ require('./img/panda.svg') } />
+            <div id='infoMess'>
+                <div className="avatar">
+                    <img src={ require('./img/panda.svg') } />
+                </div>
+                <div className ="pseudo">
+                    <h3>{this.props.pseudo}</h3>
+                </div>
+                <div className="date">
+                    <h5>{this.props.date}</h5>
+                </div>
             </div>
-            <div className="user">
-            <h3>{this.props.userName}</h3>
-            </div>
-            
-            <div className="texte">
+             <div className="texte">
                 <p>{this.props.text}</p>
             </div>
 

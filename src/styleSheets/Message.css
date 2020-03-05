@@ -1,5 +1,70 @@
 .message {
-    display: flex;
+    display: inline-flex;
     background-color: #79BCE8;
     border: black solid;
+    position: relative;
+    height: 100px;
+    width: 900px;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.message img{
+    position: absolute;
+    height: 40px;
+    margin-top: 30px;
+    margin-left: 33px;
+}
+
+.message h3{
+    position: absolute;
+    margin-left: 5px;
+}
+
+.message h5{
+    position: absolute;
+    margin-top: 80px;
+    margin-left: 15px;
+}
+
+.message p{
+    height: 100px;
+    border-left: black 2px solid;
+    position: absolute;
+    margin-left: 115px;
+    padding-left: 15px;
+}
+
+.message button{
+    height: 20px;
+    width: 50px;
+    margin-top: 70px;
+    padding: 0;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    vertical-align: middle;
+    text-justify: auto;
+    font-size: 10px;
+}
+
+.message button:nth-child(1){
+    position: relative;
+    margin: 0;
+    top: 70px;
+    left: 725px;
+}
+
+.message button:nth-child(2){
+    position: relative;
+    margin: 0;
+    top: 70px;
+    left: 735px;
+}
+
+.message button:nth-child(3){
+    position: relative;
+    margin: 0;
+    top: 70px;
+    left: 745px;
 }

@@ -2,6 +2,7 @@ import React , {Component}from 'react';
 import * as firebase from "firebase";
 import Forum from './Forum.jsx';
 import './styleSheets/button.scss'
+import Message from './Message.jsx';
 export default class NewTopic extends Component{
 
 	constructor(props){
@@ -34,18 +35,20 @@ export default class NewTopic extends Component{
 
 
 	render(){
-	  return(
+  
+  return(
       <div>
       <form>
         <div>
           <label>
             Nouveau topic, entrez votre nouveau sujet ici...
-            <textarea name='topic' value={this.state.topic} onChange={this.handleChange}/>
+            <textarea Classname='topic' value={this.state.topic} onChange={this.handleChange}/>
           </label>
           <label>
            entrez le premier message ici...
-            <textarea name='message'  onChange={this.handleChange}/>
+            <textarea Classname='message'  onChange={this.handleChange}/>
           </label>
+          <Message  text="blababbajbzibfuzobgfiuefgizffzef" topic="Les vaches ne volent pas" pseudo="Colombes" date="22/04/2017"></Message>
           <button className='fill' type ='submit' onClick={this.submitNewTopic}> Valider </button>
         </div>
       </form>
