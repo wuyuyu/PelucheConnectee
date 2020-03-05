@@ -60,7 +60,6 @@ constructor(props){
  
  
 
-
   const rootRef = firebase.database().ref();
     this.usersRef = rootRef.child("utilisateurs");
 }
@@ -122,9 +121,13 @@ saveUser(avatar, nom, prenom, pseudo, ageEnfant, userId) {
   });
 }
 
-click(anim){
+click(anim,id){
   this.setState({avatar:anim});
+  document.getElementById(id).className='avatar-img-selected';
+
+  console.log(this.state);
 }
+
 //  saveUserOld(nom,prenom,ageEnfant,userId){
 
 //    var  newUserRef = this.usersRef.push();
@@ -139,7 +142,7 @@ click(anim){
 // }
 
   render() {
-    console.log(this.state);
+   
      let userId =firebase.auth().currentUser!= null?true:false;
     // console.log("le nom est " + this.state.prenom);
     return (
@@ -156,16 +159,26 @@ click(anim){
         </div>
 
         <div id = "avatar">
-            <div className = "a1 avatar-img" name='chat' onClick={()=>{this.click('chat')}}> <img src={require('./img/cat.svg')}/> </div>
-            <div className = "a3 avatar-img" name='cochon' onClick={()=>{this.click('cochon')}}><img src={require('./img/pig.svg')}/></div>
-            <div className = "a4 avatar-img" name='hamster' onClick={()=>{this.click('hamster')}}><img src={require('./img/hamster.svg')}/></div>
-            <div className = "a5 avatar-img" name='panda' onClick={()=>{this.click('panda')}}><img src={require('./img/panda.svg')}/></div>
-            <div className = "a6 avatar-img" name='lion' onClick={()=>{this.click('lion')}}><img src={require('./img/lion.svg')}/></div>
-            <div className = "a7 avatar-img" name='singe' onClick={()=>{this.click('singe')}}><img src={require('./img/monkey.svg')}/></div>
-            <div className = "a8 avatar-img" name='hibou' onClick={()=>{this.click('hibou')}}><img src={require('./img/owl.svg')}/></div>
-            <div className = "a9 avatar-img" name='souris' onClick={()=>{this.click('souris')}}><img src={require('./img/rodent.svg')}/></div>
-            <div className = "a2 avatar-img" name='chien' onClick={()=>{this.click('chien')}}><img src={require('./img/dog.svg')}/></div>
+            <input type='radio' name='radio-choice' id='1' value='chat'onClick={()=>{this.click('chat','a1')}}></input> 
+            <label for="1" id="a1" className = "avatar-img" > <img src={require('./img/cat.svg')}/> </label>
+            <input type='radio' name='radio-choice' id='3' value='cochon' onClick={()=>{this.click('cochon','a3')}}></input> 
+            <label for="3" id="a3" className = "avatar-img" ><img src={require('./img/pig.svg')}/></label>
+            <input type='radio' name='radio-choice' id='4' value='hamster'onClick={()=>{this.click('hamster','a4')}}></input> 
+            <label for="4" id="a4" className = "avatar-img"><img src={require('./img/hamster.svg')}/></label>
+            <input type='radio' name='radio-choice' id='5' value='panda' onClick={()=>{this.click('panda','a5')}}></input> 
+            <label for="5" id="a5" className = "avatar-img"><img src={require('./img/panda.svg')}/></label>
+            <input type='radio' name='radio-choice' id='6' value='lion'></input> 
+            <label for="6" id="a6" className = "avatar-img" onClick={()=>{this.click('lion','a6')}}><img src={require('./img/lion.svg')}/></label>
+            <input type='radio' name='radio-choice' id='7' value='singe'></input> 
+            <label for="7" id="a7" className = "avatar-img" onClick={()=>{this.click('singe','a7')}}><img src={require('./img/monkey.svg')}/></label>
+            <input type='radio' name='radio-choice' id='8' value='hibou'></input> 
+            <label for="8" id="a8" className = "avatar-img" onClick={()=>{this.click('hibou','a8')}}><img src={require('./img/owl.svg')}/></label>
+            <input type='radio' name='radio-choice' id='9' value='souris'></input> 
+            <label for="9" id="a9" className = "avatar-img" onClick={()=>{this.click('souris','a9')}}><img src={require('./img/rodent.svg')}/></label>
+            <input type='radio' name='radio-choice' id='2' value='chien'></input> 
+            <label for="2" id="a2" className = "avatar-img" onClick={()=>{this.click('chien','a2')}}><img src={require('./img/dog.svg')}/></label>
         </div>
+        
     </div>
         <div>
           Nom :

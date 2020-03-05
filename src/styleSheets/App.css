@@ -1,71 +1,78 @@
-/* Pen styling, ignore */
-
-
-/* html {
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-} */
-
-html {
-    background-color: #ECEFFC;
-}
-
-body {
-    width: 100%;
-    font: 300 1em 'Fira Sans', sans-serif;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-    /* Center everything ever */
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    text-align: center;
-    min-height: 100vh;
-    display: flex;
-    position: relative;
-}
-
 body,
 html {
-    height: 100%;
+    width: 100%;
     margin: 0;
     padding: 0;
 }
 
+.App {
+    text-align: center;
+    width: 100%;
+}
 
-/* body {
-    color: #fff;
-    display: grid;
-    place-items: center;
-} */
+.App-logo {
+    height: 40vmin;
+    pointer-events: none;
+}
 
-
-/* body {
-    margin: 0;
-    
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-} */
-
-
-/* body {
-    min-height: 100%;
-    margin: 0; 
-    font-family: 'Inter UI', 'Inter', Arial; 
-} */
+@media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+        animation: App-logo-spin infinite 20s linear;
+    }
+}
 
 .img {
     width: 34px;
 }
 
-.a {
+
+.a{
     text-decoration: none;
 }
 
-
-/* #Horloge {
+#Horloge {
     position: absolute;
     top: 25%;
-} */
+}
+
+.logo-container {
+    width: 100%;
+    height: 190px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+}
+
+.logo-image-section {
+    height: 190px;
+    position: absolute;
+    top: 30px;
+    left: 40px;
+}
+
+.brush {
+    height: 190px;
+    width: 95%;
+}
+
+.logo-section {
+    height: 80px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    flex-direction: column;
+    top: 80px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+
 
 .lien {
     font-size: 20px;
@@ -81,6 +88,23 @@ html {
     text-decoration: none;
     background-color: white;
     margin-top: 200px;
+}
+
+.forum{
+
+    flex-direction: column;
+    align-items: center;
+    line-height: 50px;
+    text-decoration: none;
+    margin-top: 25px;
+    background-size: cover;
+    display: block;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;;
+    font-size: 22px;
+    background-color: #6BCEA4;
 }
 
 .menu {
@@ -108,6 +132,11 @@ html {
     font-size: 20px;
 }
 
+html {
+    background-color: #ECEFFC;
+    height: 100%;
+}
+
 .panda {
     width: 40px;
     margin-left: 5px;
@@ -118,12 +147,59 @@ html {
     width: 60px;
 }
 
+.App-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+}
+
+.App-link {
+    color: #61dafb;
+}
+
+.titre {
+    display: inline-flex;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 70px;
+    font-weight: lighter;
+    letter-spacing: 2px;
+}
+
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#footer {
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    bottom: 0;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    line-height: 60px;
+    left: 0;
+    right: 0;
+    align-content: center;
+    text-align: center;
+    color: #85FFCB;
+    font-size: 25px;
+    text-shadow: rgb(0, 0, 0) 1px 1px, rgb(0, 0, 0) -1px 1px, rgb(0, 0, 0) -1px -1px, rgb(0, 0, 0) 1px -1px;
+    letter-spacing: 1px;
+    padding-top: 40px;
+}
+
 #about {
     font-size: 25px;
     text-decoration: bold;
 }
-
-
-/* #content {
-    min-height: 200px;
-} */
