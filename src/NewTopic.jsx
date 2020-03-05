@@ -42,6 +42,10 @@ export default class NewTopic extends Component{
             Nouveau topic, entrez votre nouveau sujet ici...
             <textarea name='topic' value={this.state.topic} onChange={this.handleChange}/>
           </label>
+          <label>
+           entrez le premier message ici...
+            <textarea name='message'  onChange={this.handleChange}/>
+          </label>
           <button className='fill' type ='submit' onClick={this.submitNewTopic}> Valider </button>
         </div>
       </form>
