@@ -64,7 +64,7 @@ export default function Contact(){
         <div>
           <head><title>Form</title></head>
             <div id='container1'>
-              <h2 class='contact-form'>Contact</h2>
+              <h2 className='contact-form'>Contact</h2>
               <form ng-submit='addMessage' action="index.html" method='post'>
                 <label className='contactLabel' for="name">Nom:</label>
                 <input className='contactInput' type="text" id='name' ng-model='todoMessage' placeholder='Votre nom'/>
