@@ -48,7 +48,7 @@ export default class NewTopic extends Component{
            entrez le premier message ici...
             <textarea Classname='message'  onChange={this.handleChange}/>
           </label>
-          <Message  text="blababbajbzibfuzobgfiuefgizffzef" topic="Les vaches ne volent pas" pseudo="Colombes" date="22/04/2017"></Message>
+          <Message/>
           <button className='fill' type ='submit' onClick={this.submitNewTopic}> Valider </button>
         </div>
       </form>

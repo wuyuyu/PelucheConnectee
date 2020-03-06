@@ -3,6 +3,7 @@ import './styleSheets/button.scss';
 import './styleSheets/forumStyle.css'
 import * as firebase from "firebase";
 import config from "./firebaseconfig.js";
+import Topic from "./Topic";
 
 import {
     BrowserRouter as Router,
@@ -25,6 +26,7 @@ export default class Forum extends Component {
             newTopic: false,
             repondreMessage: false
         };
+        console.log("here");
     }
 
     async componentDidMount() {
@@ -76,12 +78,21 @@ export default class Forum extends Component {
         document.getElementById('forum').style.display= 'none';
     }
 
+
+    cache = ()=>{
+        document.getElementById("forum").style.display="none";
+    }
+        
     render(){
        
         console.log(this.state);
+        console.log("toto")
 
         const _topics = this.state.topics;
-       const listTopic = _topics.map((t) => <li key = {t.id}> <Link className='forum pulse'>{t.topic}</Link></li>);
+       const listTopic = _topics.map((t) => <li key = {t.id}> <Link to={this.props.match.url + "/" + t.topic} onClick={this.cache} className='forum pulse'>{t.topic}</Link></li>);
+       const listRoute = _topics.map((t) => <Route id={t.topic} path={this.props.match.url + "/" + t.topic} component={Topic} />);
+       console.log("listroute=",listRoute)
+ 
        console.log(listTopic);
        console.log(_topics);
         return(
@@ -90,18 +101,22 @@ export default class Forum extends Component {
                  <div id='forum'>
                 <h4 className="forumT">Choisissez votre sujet  </h4>
                 <ul>{listTopic}</ul>
+
                 <form>
                 <button  type ="submit" className="fill nTop" onClick={()=>{this.hidden();this.toggleNewTopic();}} >
                     <Link to="/NewTopic">Nouveau sujet </Link>
+
                 </button>
             </form>
             </div>
             <Switch>
+               
               <Route exact path="/" />
               <Route path="/NewTopic" component={NewTopic} />
+              {listRoute}
             </Switch>     
             </Router>
-            </div>
+            </div> 
         );
     }
 }

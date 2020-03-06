@@ -7,11 +7,20 @@ import BoutonLike from "./BoutonLike.jsx";
 export default class Message extends Component{
     constructor(props){
         super(props);
+
+        let userId =  firebase.auth().currentUser;
+        if (userId == null){
+          return;
+        }
+       
+
+
+ 
+
         this.state = {
             topic:'',
             texte:'',
-            pseudo: '',
-            avatar:'',
+           userId:userId,
             date:''
         };
 
@@ -32,6 +41,70 @@ export default class Message extends Component{
        });
     }
 
+    displayUserPseudo(){
+        let userId =  firebase.auth().currentUser;
+        if (userId == null){
+          return;
+        }
+
+        var nickname
+        var ref = firebase.database().ref('utilisateurs/' + userId.uid).child("pseudo");
+        ref.on("value", function(snapshot) {
+            
+            nickname =snapshot.val();
+        });   
+    
+    
+        return nickname;
+    
+         }
+
+displayUserAvatar(){
+    let userId =  firebase.auth().currentUser;
+        if (userId == null){
+          return;
+        }
+    
+    var pic;
+    var ref = firebase.database().ref('utilisateurs/' + userId.uid).child("avatar");
+    ref.on("value", function(snapshot) {
+        
+        pic =snapshot.val();
+
+    });
+        
+        switch(pic){
+            
+            default:
+            return  alert("Aucun avatar n'est selectionné!");
+            case 'chat':
+            return <div><img src={ require('./img/cat.svg') } /></div>;
+            
+            case 'chien':
+            return <div><img src={ require('./img/dog.svg') } /></div>;
+            
+            case 'souris':
+            return <div><img src={ require('./img/rodent.svg') } /></div>;
+            
+            case 'hibou':
+            return <div><img src={ require('./img/owl.svg') } /></div>;
+            
+            case 'singe':
+            return <div><img src={ require('./img/monkey.svg') } /></div>;
+            
+            case 'cochon':
+            return <div><img src={ require('./img/pig.svg') } /></div>;
+            
+            case 'hamster':
+            return <div><img src={ require('./img/hamster.svg') } /></div>;
+            
+            case 'panda':
+            return <div><img src={ require('./img/panda.svg') } /></div>;
+            
+        } 
+
+        
+        }
  
 
     render(){
@@ -40,10 +113,10 @@ export default class Message extends Component{
                
             <div id='infoMess'>
                 <div className="avatar">
-                    <img src={ require('./img/panda.svg') } />
+                   {this.displayUserAvatar}
                 </div>
                 <div className ="pseudo">
-                    <h3>{this.props.pseudo}</h3>
+                    <h3>{this.displayUserPseudo}</h3>
                 </div>
                 <div className="date">
                     <h5>{this.props.date}</h5>

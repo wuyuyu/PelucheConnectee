@@ -7,10 +7,11 @@
     color: white;
     font-family: 'Raleway';
     font-size: 2.5rem;
+    
 }
 
 .gradient-border {
-    --borderWidth: 3px;
+    --borderWidth: 2px;
     background: #1D1F20;
     position: relative;
     border-radius: var(--borderWidth);

@@ -1,14 +1,16 @@
 import React, { Component } from "react";
 import * as firebase from"firebase";
+import { withRouter } from 'react-router-dom';
 
 
 
-export default class Topic extends Component{
+class Topic extends Component{
     constructor(props){
+        console.log("le composant est crée")
         super(props);
         this.state = {
             userName :'',
-            titre:'',
+            titre:'Espoir',
             date:'',
         };
 
@@ -18,17 +20,16 @@ export default class Topic extends Component{
 
     }
 
-    
-
-
-
 
 
     render(){
+       
+        // console.log(test)
+        // console.log(this.props.location)
         return(
             <div>
                 <div className="Sujet">
-                    <label>Titre du sujet</label>
+                    <label></label>
                     <textarea >
                     </textarea>
                    
@@ -41,3 +42,4 @@ export default class Topic extends Component{
     }
 
 }
+export default withRouter(Topic)
